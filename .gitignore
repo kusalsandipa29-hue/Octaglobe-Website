@@ -1,0 +1,26 @@
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editors
+.vscode/
+.idea/
+
+# Node / tooling
+node_modules/
+.npm/
+.pnpm-store/
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.swp
+
+# Local environment files
+.env
+.env.*
+
+# Agent workspace metadata
+.agents/

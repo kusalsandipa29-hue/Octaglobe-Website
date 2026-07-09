@@ -3,16 +3,15 @@ import { Chapter, ChapterLabel, Reveal, COLORS, MONO } from '../primitives';
 import logoMark from '../../../imports/Lockup_1.png';
 
 const CHANNELS = [
-  { label: 'Email', value: 'research@octaglobe.com', href: 'mailto:research@octaglobe.com' },
-  { label: 'GitHub', value: 'github.com/octaglobe', href: '#' },
-  { label: 'LinkedIn', value: 'linkedin.com/company/octaglobe', href: '#' },
-  { label: 'Careers', value: 'We hire builders', href: '#' },
+  { label: 'Email', value: 'info@octaglobe.com', href: 'mailto:info@octaglobe.com' },
+  { label: 'LinkedIn', value: 'linkedin.com/company/octaglobe', href: 'https://www.linkedin.com/company/octaglobe/', target: '_blank' },
+  { label: 'Instagram', value: 'instagram.com/nandinuonline', href: 'https://www.instagram.com/nandinuonline/', target: '_blank' },
 ];
 
 export function Connect() {
   return (
     <Chapter id="connect" background={COLORS.structure} style={{ padding: '140px 0 0' }}>
-      <ChapterLabel index="11" title="Connect" invert />
+      <ChapterLabel index="07" title="Connect" invert />
 
       <Reveal>
         <h2
@@ -45,11 +44,12 @@ export function Connect() {
   );
 }
 
-function ChannelLink({ label, value, href }: { label: string; value: string; href: string }) {
+function ChannelLink({ label, value, href, target }: { label: string; value: string; href: string; target?: string }) {
   const [hover, setHover] = useState(false);
   return (
     <a
       href={href}
+      target={target}
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
       style={{

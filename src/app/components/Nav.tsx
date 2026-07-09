@@ -10,13 +10,14 @@ const SECTION_ITEMS: { label: string; target: string }[] = [
   { label: 'Process', target: 'operating-model' },
   { label: 'Research', target: 'research-engine' },
   { label: 'Philosophy', target: 'philosophy' },
-  { label: 'Products', target: 'product-system' },
 ];
 
 // Route links
-const PAGE_ITEMS: { label: string; to: string }[] = [
-  { label: 'About', to: '/about' },
+const PAGE_ITEMS: { label: string; to?: string; onClick?: () => void }[] = [
+  { label: 'Products' },
+  { label: 'Case Studies' },
   { label: 'Blog', to: '/blog' },
+  { label: 'About', to: '/about' },
 ];
 
 const ALL_SECTIONS = [
@@ -26,10 +27,6 @@ const ALL_SECTIONS = [
   'operating-model',
   'research-engine',
   'philosophy',
-  'product-system',
-  'evidence',
-  'builders',
-  'future',
   'connect',
 ];
 
@@ -76,7 +73,6 @@ export function Nav() {
   const isSectionActive = (target: string) => {
     if (!isHome) return false;
     if (target === 'operating-model') return ['opportunity', 'operating-model'].includes(activeSection);
-    if (target === 'product-system') return ['product-system', 'evidence'].includes(activeSection);
     return activeSection === target;
   };
 
@@ -106,7 +102,7 @@ export function Nav() {
 
           <nav style={{ display: 'flex', gap: 8, alignItems: 'center', justifyContent: 'center', flex: 1 }} className="hidden md:flex">
             {PAGE_ITEMS.map((item) => (
-              <NavButton key={item.label} label={item.label} active={pathname === item.to} onDark={onDark} to={item.to} />
+              <NavButton key={item.label} label={item.label} active={item.to ? pathname === item.to : false} onDark={onDark} to={item.to} onClick={item.onClick} />
             ))}
           </nav>
 

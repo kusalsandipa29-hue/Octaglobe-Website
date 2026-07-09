@@ -298,13 +298,6 @@ export function Blog() {
         </div>
       </section>
 
-      {/* Newsletter */}
-      <section style={{ padding: '40px 0 120px' }}>
-        <div style={{ maxWidth: MAX_W, margin: '0 auto', padding: '0 40px' }}>
-          <Newsletter />
-        </div>
-      </section>
-
       <SiteFooter />
 
       {/* Reader modal */}
@@ -372,76 +365,6 @@ function PostCard({ post, onOpen }: { post: Post; onOpen: () => void }) {
         </div>
       </div>
     </motion.button>
-  );
-}
-
-function Newsletter() {
-  const [email, setEmail] = useState('');
-  const [done, setDone] = useState(false);
-  return (
-    <Frame ticks style={{ padding: '56px 48px', backgroundColor: COLORS.surface }}>
-      <div
-        style={{ display: 'grid', gridTemplateColumns: '1fr auto', gap: 40, alignItems: 'center' }}
-        className="lg:grid-cols-[1fr_auto] grid-cols-1"
-      >
-        <div>
-          <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 16 }}>
-            <span style={{ width: 6, height: 6, borderRadius: '50%', backgroundColor: COLORS.signal }} />
-            <span style={{ fontFamily: MONO, fontSize: 11, letterSpacing: '0.16em', textTransform: 'uppercase', color: COLORS.ink40 }}>
-              Newsletter
-            </span>
-          </div>
-          <h3 style={{ fontSize: 'clamp(24px, 3vw, 34px)', fontWeight: 600, letterSpacing: '-0.02em', color: COLORS.structure, maxWidth: 420 }}>
-            Field notes from the operating system.
-          </h3>
-        </div>
-        <form
-          onSubmit={(e) => {
-            e.preventDefault();
-            if (email.trim()) setDone(true);
-          }}
-          style={{ display: 'flex', gap: 10, minWidth: 320 }}
-        >
-          <input
-            type="email"
-            required
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            placeholder="you@work.com"
-            disabled={done}
-            style={{
-              flex: 1,
-              padding: '13px 18px',
-              borderRadius: 999,
-              border: `1px solid ${COLORS.line}`,
-              backgroundColor: COLORS.clarity,
-              fontSize: 14,
-              color: COLORS.structure,
-              outline: 'none',
-            }}
-          />
-          <button
-            type="submit"
-            disabled={done}
-            style={{
-              padding: '13px 22px',
-              borderRadius: 999,
-              border: 'none',
-              cursor: done ? 'default' : 'pointer',
-              backgroundColor: done ? COLORS.signal : COLORS.structure,
-              color: done ? COLORS.structure : COLORS.clarity,
-              fontFamily: MONO,
-              fontSize: 12,
-              letterSpacing: '0.06em',
-              textTransform: 'uppercase',
-              whiteSpace: 'nowrap',
-            }}
-          >
-            {done ? 'Subscribed' : 'Subscribe'}
-          </button>
-        </form>
-      </div>
-    </Frame>
   );
 }
 

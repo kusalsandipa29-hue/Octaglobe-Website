@@ -10,7 +10,6 @@ const COLUMNS: { title: string; links: { label: string; to?: string; section?: s
       { label: 'About', to: '/about' },
       { label: 'Blog', to: '/blog' },
       { label: 'Philosophy', section: 'philosophy' },
-      { label: 'Builders', section: 'builders' },
     ],
   },
   {
@@ -18,17 +17,14 @@ const COLUMNS: { title: string; links: { label: string; to?: string; section?: s
     links: [
       { label: 'Process', section: 'operating-model' },
       { label: 'Research', section: 'research-engine' },
-      { label: 'Products', section: 'product-system' },
-      { label: 'Future', section: 'future' },
     ],
   },
   {
     title: 'Connect',
     links: [
       { label: 'Email', section: 'connect' },
-      { label: 'GitHub', section: 'connect' },
       { label: 'LinkedIn', section: 'connect' },
-      { label: 'Careers', section: 'connect' },
+      { label: 'Instagram', section: 'connect' },
     ],
   },
 ];

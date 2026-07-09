@@ -8,7 +8,6 @@ export function Landing() {
       id="landing"
       style={{
         minHeight: '100vh',
-        paddingTop: 76, // account for fixed header height to avoid overlap
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
@@ -63,7 +62,7 @@ export function Landing() {
         style={{
           maxWidth: MAX_W,
           margin: '0 auto',
-          padding: '0 40px',
+          padding: '80px 40px 72px',
           width: '100%',
           position: 'relative',
           zIndex: 2,

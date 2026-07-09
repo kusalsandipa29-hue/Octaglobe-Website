@@ -3,12 +3,21 @@ import { motion, useInView } from 'motion/react';
 import { COLORS, MONO, MAX_W, Reveal, Frame } from '../components/primitives';
 import { SiteFooter } from '../components/SiteFooter';
 import { ImageWithFallback } from '../components/figma/ImageWithFallback';
-import galleryVideo from '../../imports/20260709-0534-40.7571043.mp4';
+import galleryImg1 from '../../imports/IMG-20260702-WA0033.jpg.jpeg';
+import nibm1 from '../../imports/nibm event/FB_IMG_1781829378686.jpg';
+import nibm2 from '../../imports/nibm event/FB_IMG_1781829391352.jpg';
+import nibm3 from '../../imports/nibm event/FB_IMG_1781829410334.jpg';
+import nibm4 from '../../imports/nibm event/FB_IMG_1781829456993.jpg';
+import nibm5 from '../../imports/nibm event/FB_IMG_1783579681257.jpg.jpeg';
+import founderImage from '../../imports/Lockup_1-1.png';
 
 const GALLERY = [
-  'https://images.unsplash.com/photo-1532622785990-d2c36a76f5a6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080',
-  'https://images.unsplash.com/photo-1631203924626-549ba231917e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080',
-  'https://images.unsplash.com/photo-1590103514966-5e2a11c13e21?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080',
+  galleryImg1,
+  nibm1,
+  nibm2,
+  nibm3,
+  nibm4,
+  nibm5,
 ];
 
 const NARRATIVE: { heading: string; body: string[] }[] = [
@@ -64,6 +73,7 @@ const STATS = [
 ];
 
 export function About() {
+
   return (
     <div style={{ backgroundColor: COLORS.clarity }}>
       {/* Hero */}
@@ -98,66 +108,49 @@ export function About() {
         </div>
       </section>
 
-      {/* Gallery — video led */}
+      {/* Gallery — horizontal scrolling event photos */}
       <section style={{ paddingBottom: 40 }}>
         <div style={{ maxWidth: MAX_W, margin: '0 auto', padding: '0 40px' }}>
           <div
-            style={{ display: 'grid', gridTemplateColumns: '1.6fr 1fr', gap: 16 }}
-            className="lg:grid-cols-[1.6fr_1fr] grid-cols-1"
+            className="about-gallery--scroll"
+            style={{
+              overflow: 'hidden',
+              paddingBottom: 8,
+              marginBottom: 16,
+            }}
           >
-            <motion.div
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-              style={{ borderRadius: 20, overflow: 'hidden', border: `1px solid ${COLORS.line}`, position: 'relative' }}
+            <div
+              className="about-gallery--track"
+              style={{
+                display: 'flex',
+                gap: 16,
+                alignItems: 'stretch',
+                paddingBottom: 12,
+                minWidth: 'max-content',
+              }}
             >
-              <video
-                src={galleryVideo}
-                autoPlay
-                muted
-                loop
-                playsInline
-                style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', aspectRatio: '16 / 10' }}
-              />
-              <div
-                style={{
-                  position: 'absolute',
-                  left: 20,
-                  bottom: 20,
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: 10,
-                  padding: '8px 14px',
-                  borderRadius: 999,
-                  backgroundColor: 'rgba(20,18,40,0.55)',
-                  backdropFilter: 'blur(8px)',
-                }}
-              >
-                <span style={{ width: 6, height: 6, borderRadius: '50%', backgroundColor: COLORS.signal }} />
-                <span style={{ fontFamily: MONO, fontSize: 11, letterSpacing: '0.14em', textTransform: 'uppercase', color: COLORS.clarity }}>
-                  Inside the studio
-                </span>
-              </div>
-            </motion.div>
-
-            <div style={{ display: 'grid', gridTemplateRows: 'repeat(2, 1fr)', gap: 16 }}>
-              {GALLERY.slice(0, 2).map((src, i) => (
-                <motion.div
-                  key={src}
-                  initial={{ opacity: 0, y: 24 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, amount: 0.3 }}
-                  transition={{ duration: 0.6, delay: 0.1 + i * 0.1, ease: [0.22, 1, 0.36, 1] }}
-                  style={{ borderRadius: 20, overflow: 'hidden', border: `1px solid ${COLORS.line}` }}
-                >
-                  <ImageWithFallback
-                    src={src}
-                    alt="OctaGlobe team at work"
-                    style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', minHeight: 140 }}
-                  />
-                </motion.div>
-              ))}
+              {[...GALLERY, ...GALLERY].map((src, index) => {
+                const displayIndex = index % GALLERY.length;
+                return (
+                  <motion.div
+                    key={`${src}-${index}`}
+                    initial={{ opacity: 0, y: 24 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, amount: 0.3 }}
+                    transition={{ duration: 0.6, delay: displayIndex * 0.08, ease: [0.22, 1, 0.36, 1] }}
+                    className="about-gallery--item"
+                    style={{
+                      inlineSize: 'clamp(320px, 30vw, 420px)',
+                    }}
+                  >
+                    <ImageWithFallback
+                      src={src}
+                      alt={`OctaGlobe event photo ${displayIndex + 1}`}
+                      style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center center', display: 'block' }}
+                    />
+                  </motion.div>
+                );
+              })}
             </div>
           </div>
         </div>
@@ -267,7 +260,7 @@ export function About() {
           <Reveal delay={0.16}>
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 12, marginTop: 36 }}>
               <ImageWithFallback
-                src="https://images.unsplash.com/photo-1574556132185-5f4a6ffa80c6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=200"
+                src={founderImage}
                 alt="OctaGlobe founder"
                 style={{ width: 44, height: 44, borderRadius: '50%', objectFit: 'cover' }}
               />

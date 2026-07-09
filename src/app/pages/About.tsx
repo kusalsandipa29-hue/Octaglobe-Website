@@ -4,20 +4,16 @@ import { COLORS, MONO, MAX_W, Reveal, Frame } from '../components/primitives';
 import { SiteFooter } from '../components/SiteFooter';
 import { ImageWithFallback } from '../components/figma/ImageWithFallback';
 import galleryImg1 from '../../imports/IMG-20260702-WA0033.jpg.jpeg';
-import nibm1 from '../../imports/nibm event/FB_IMG_1781829378686.jpg';
+import galleryImg2 from '../../imports/IMG_5372.JPG.jpeg';
+import galleryImg3 from '../../imports/IMG_5373.JPG.jpeg';
 import nibm2 from '../../imports/nibm event/FB_IMG_1781829391352.jpg';
-import nibm3 from '../../imports/nibm event/FB_IMG_1781829410334.jpg';
-import nibm4 from '../../imports/nibm event/FB_IMG_1781829456993.jpg';
-import nibm5 from '../../imports/nibm event/FB_IMG_1783579681257.jpg.jpeg';
 import founderImage from '../../imports/Lockup_1-1.png';
 
 const GALLERY = [
   galleryImg1,
-  nibm1,
+  galleryImg2,
+  galleryImg3,
   nibm2,
-  nibm3,
-  nibm4,
-  nibm5,
 ];
 
 const NARRATIVE: { heading: string; body: string[] }[] = [
@@ -67,7 +63,7 @@ function Counter({ to, suffix = '' }: { to: number; suffix?: string }) {
 
 const STATS = [
   { value: 10, suffix: '', label: 'Step operating process' },
-  { value: 8, suffix: '', label: 'Products in the system' },
+  { value: 3, suffix: '', label: 'Case studies done' },
   { value: 100, suffix: '%', label: 'Evidence-led decisions' },
   { value: 1, suffix: '', label: 'Independent team' },
 ];

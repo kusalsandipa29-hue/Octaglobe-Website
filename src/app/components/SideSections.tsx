@@ -23,7 +23,7 @@ export function SideSections() {
       { rootMargin: '-45% 0px -45% 0px', threshold: 0 }
     );
 
-    ITEMS.concat(['opportunity', 'operating-model', 'research-engine', 'philosophy', 'product-system', 'evidence']).forEach((id) => {
+    ITEMS.concat(['opportunity', 'operating-model', 'research-engine', 'philosophy']).forEach((id) => {
       const el = document.getElementById(id);
       if (el) observer.observe(el);
     });

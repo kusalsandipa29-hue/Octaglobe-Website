@@ -3,6 +3,7 @@ import { Link, useLocation, useNavigate } from 'react-router';
 import wordmark from '../../imports/Wordmark.png';
 import wordmarkInvert from '../../imports/Wordmark__Invert_.png';
 import { COLORS, MONO, MAX_W } from './primitives';
+// mobile drawer removed — nav simplified to blend with hero
 
 // In-page section links (home only)
 const SECTION_ITEMS: { label: string; target: string }[] = [
@@ -90,10 +91,11 @@ export function Nav() {
         left: 0,
         right: 0,
         zIndex: 100,
-        transition: 'background-color 0.3s ease, border-color 0.3s ease',
-        backgroundColor: solid ? 'rgba(255,255,255,0.85)' : 'transparent',
-        backdropFilter: solid ? 'blur(16px)' : 'none',
-        borderBottom: `1px solid ${solid ? COLORS.lineFaint : 'transparent'}`,
+        transition: 'background-color 0.28s ease, border-color 0.28s ease, box-shadow 0.28s ease',
+        backgroundColor: solid ? 'rgba(255,255,255,0.9)' : 'transparent',
+        backdropFilter: solid ? 'blur(12px)' : 'none',
+        borderBottom: solid ? `1px solid ${COLORS.lineFaint}` : 'none',
+        boxShadow: solid ? '0 8px 24px rgba(20,18,40,0.06)' : 'none',
       }}
     >
       <div style={{ maxWidth: MAX_W, margin: '0 auto', padding: '0 40px' }}>
@@ -102,51 +104,16 @@ export function Nav() {
             <img src={onDark ? wordmarkInvert : wordmark} alt="OctaGlobe" style={{ height: 22 }} />
           </Link>
 
-          <nav style={{ display: 'flex', gap: 4, alignItems: 'center' }} className="hidden md:flex">
-            {SECTION_ITEMS.map((item) => (
-              <NavButton
-                key={item.label}
-                label={item.label}
-                active={isSectionActive(item.target)}
-                onDark={onDark}
-                onClick={() => scrollToSection(item.target)}
-              />
-            ))}
-
+          <nav style={{ display: 'flex', gap: 8, alignItems: 'center', justifyContent: 'center', flex: 1 }} className="hidden md:flex">
             {PAGE_ITEMS.map((item) => (
               <NavButton key={item.label} label={item.label} active={pathname === item.to} onDark={onDark} to={item.to} />
             ))}
-
-            <button
-              onClick={() => scrollToSection('connect')}
-              style={{
-                marginLeft: 12,
-                fontFamily: MONO,
-                fontSize: 12,
-                letterSpacing: '0.08em',
-                textTransform: 'uppercase',
-                color: onDark ? COLORS.clarity : COLORS.structure,
-                background: 'none',
-                border: `1px solid ${onDark ? 'rgba(255,255,255,0.25)' : COLORS.line}`,
-                borderRadius: 999,
-                padding: '9px 18px',
-                cursor: 'pointer',
-                display: 'flex',
-                alignItems: 'center',
-                gap: 8,
-                transition: 'color 0.3s ease, border-color 0.3s ease',
-              }}
-            >
-              <span style={{ width: 6, height: 6, borderRadius: '50%', backgroundColor: COLORS.signal }} />
-              Contact
-            </button>
           </nav>
 
-          <div
-            className="md:hidden"
-            style={{ fontFamily: MONO, fontSize: 11, letterSpacing: '0.1em', color: onDark ? 'rgba(255,255,255,0.6)' : COLORS.ink40, textTransform: 'uppercase' }}
-          >
-            {isHome ? activeSection.replace(/-/g, ' ') : pathname.replace('/', '')}
+          <div className="md:hidden" style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+            <div style={{ fontFamily: MONO, fontSize: 11, letterSpacing: '0.1em', color: onDark ? 'rgba(255,255,255,0.85)' : COLORS.ink40, textTransform: 'uppercase' }}>
+              {isHome ? activeSection.replace(/-/g, ' ') : pathname.replace('/', '')}
+            </div>
           </div>
         </div>
       </div>

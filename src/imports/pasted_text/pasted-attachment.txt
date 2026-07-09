@@ -1,0 +1,790 @@
+Based on your R&D direction, brand foundation, logo system, and design philosophy, I would not build OctaGlobe like a software agency website or even a startup website.
+
+I would build it as the public interface of a product operating system.
+
+The visitor should leave remembering **how OctaGlobe thinks**, not simply what it builds.
+
+---
+
+# Core Narrative
+
+Instead of
+
+> We build software.
+
+The narrative becomes
+
+> We discover opportunities.
+>
+> We validate them.
+>
+> We build repeatable systems.
+>
+> Products are simply the evidence.
+
+Everything on the website supports this single story.
+
+---
+
+# Website Structure
+
+```
+Landing
+
+↓
+
+Why We Exist
+
+↓
+
+The Operating Model
+
+↓
+
+How Products Are Born
+
+↓
+
+The Product System
+
+↓
+
+Research Engine
+
+↓
+
+Execution Engine
+
+↓
+
+Evidence
+
+↓
+
+Builders
+
+↓
+
+Future
+
+↓
+
+Contact
+```
+
+This isn't a marketing funnel.
+
+It's an unfolding documentary.
+
+---
+
+# 01 — Landing
+
+Objective
+
+Immediately communicate
+
+"This company builds product systems—not client software."
+
+---
+
+Hero
+
+Nothing flashy.
+
+Lots of whitespace.
+
+Center stage belongs to one sentence.
+
+> Building Connected Product Systems
+
+Supporting copy
+
+> OctaGlobe researches operational opportunities, validates them through rapid experimentation, and transforms them into modular software systems that evolve over time. 
+
+No CTA button.
+
+Instead
+
+```
+Explore the System
+↓
+
+```
+
+Scrolling begins the story.
+
+---
+
+Hero Animation
+
+An empty canvas.
+
+Small modules appear.
+
+Connections form.
+
+Relationships emerge.
+
+Eventually the entire system becomes visible.
+
+No glowing effects.
+
+No AI particles.
+
+Just structure becoming understandable.
+
+---
+
+# 02 — Why We Exist
+
+Title
+
+Why software keeps becoming obsolete.
+
+Not paragraphs.
+
+Instead
+
+A visual comparison.
+
+Traditional software
+
+```
+Idea
+
+↓
+
+Product
+
+↓
+
+Release
+
+↓
+
+Maintenance
+
+↓
+
+Replacement
+```
+
+Animated.
+
+Then it fades.
+
+Beside it
+
+OctaGlobe
+
+```
+Opportunity
+
+↓
+
+Research
+
+↓
+
+Validation
+
+↓
+
+Module
+
+↓
+
+System
+
+↓
+
+Iteration
+
+↓
+
+Growth
+```
+
+The visitor instantly understands
+
+Products evolve.
+
+Software doesn't end.
+
+---
+
+# 03 — Opportunity Before Industry
+
+One of the strongest ideas.
+
+Headline
+
+We don't begin with industries.
+
+We begin with operational friction.
+
+Visualization
+
+```
+Healthcare
+
+Retail
+
+Logistics
+
+Education
+
+Finance
+
+Government
+```
+
+These slowly dissolve.
+
+Only the problems remain.
+
+Scheduling
+
+Payments
+
+Identity
+
+Communication
+
+Automation
+
+Data
+
+Approvals
+
+Tracking
+
+These reorganize into reusable modules.
+
+The message
+
+Industries change.
+
+Operational problems repeat.
+
+---
+
+# 04 — The Operating Model
+
+This becomes the centerpiece.
+
+Large interactive visualization.
+
+```
+Opportunity
+
+↓
+
+Research
+
+↓
+
+Validation
+
+↓
+
+Architecture
+
+↓
+
+Prototype
+
+↓
+
+MVP
+
+↓
+
+Product
+
+↓
+
+Growth
+
+↓
+
+Evolution
+```
+
+Each node expands.
+
+Each explains
+
+Inputs
+
+Outputs
+
+Decisions
+
+Artifacts
+
+Risks
+
+Metrics
+
+Real examples
+
+Almost like viewing Git history.
+
+This section alone should feel like a product.
+
+---
+
+# 05 — Research Engine
+
+Explain R&D.
+
+Not AI.
+
+Not technology.
+
+Research.
+
+Large horizontal timeline.
+
+```
+Observe
+
+↓
+
+Interview
+
+↓
+
+Map
+
+↓
+
+Hypothesize
+
+↓
+
+Prototype
+
+↓
+
+Measure
+
+↓
+
+Repeat
+```
+
+Each interaction reveals
+
+documents
+
+wireframes
+
+research boards
+
+decision trees
+
+validation reports
+
+No stock illustrations.
+
+Everything resembles engineering documentation.
+
+---
+
+# 06 — Product System
+
+Instead of cards.
+
+Imagine a modular architecture explorer.
+
+```
+□□□□□□□□
+
+□□□□□□□□
+
+□□□□□□□□
+```
+
+Hover one.
+
+Connections illuminate.
+
+The visitor realizes
+
+Products share infrastructure.
+
+Products aren't isolated.
+
+Selecting one module shows
+
+Opportunity
+
+↓
+
+Research
+
+↓
+
+Validation
+
+↓
+
+Current Stage
+
+↓
+
+Future Expansion
+
+Each product looks like one cell inside a much larger organism.
+
+Exactly matching the modular philosophy. 
+
+---
+
+# 07 — The Architecture
+
+Large system visualization.
+
+Not technical.
+
+Conceptual.
+
+```
+Connect
+
+↓
+
+Automate
+
+↓
+
+Data
+
+↓
+
+Intelligence
+
+↓
+
+Experience
+
+↓
+
+Control
+
+↓
+
+Optimize
+
+↓
+
+Scale
+```
+
+Exactly the architecture from the brand foundation. 
+
+Hovering reveals
+
+Purpose
+
+Dependencies
+
+Outputs
+
+Affected modules
+
+Visitors understand
+
+Everything connects.
+
+---
+
+# 08 — Evidence
+
+No testimonials.
+
+No logos.
+
+No meaningless metrics.
+
+Instead
+
+Timeline.
+
+```
+Research
+
+↓
+
+Prototype
+
+↓
+
+Validation
+
+↓
+
+Launch
+
+↓
+
+Iteration
+
+↓
+
+Expansion
+```
+
+Each product becomes evidence that the operating model works.
+
+Not "case studies."
+
+System outcomes.
+
+---
+
+# 09 — Builders
+
+Not biographies.
+
+Introduce founders through execution.
+
+Example
+
+```
+Research
+
+42 validation studies
+
+↓
+
+Product
+
+18 system architectures
+
+↓
+
+Design
+
+240 interface iterations
+
+↓
+
+Engineering
+
+130 production deployments
+```
+
+Visitors learn what each builder owns.
+
+Not where they worked.
+
+---
+
+# 10 — Future
+
+A living roadmap.
+
+Not promises.
+
+System evolution.
+
+Imagine an expanding constellation.
+
+Existing modules
+
+Future modules
+
+Research areas
+
+Experimental concepts
+
+Unknown opportunities
+
+Everything visibly connected.
+
+Visitors understand
+
+The system is alive.
+
+---
+
+# 11 — Connect
+
+Extremely simple.
+
+One sentence.
+
+> We're always researching operational problems worth solving.
+
+No oversized contact form.
+
+Just
+
+Email
+
+GitHub
+
+LinkedIn
+
+Careers
+
+---
+
+# Navigation
+
+Minimal.
+
+```
+System
+
+Research
+
+Products
+
+Builders
+
+Journal
+
+Future
+
+Contact
+```
+
+Scrolling highlights current chapter.
+
+No sticky CTA.
+
+---
+
+# Motion System
+
+Every animation communicates information.
+
+| Motion          | Meaning                      |
+| --------------- | ---------------------------- |
+| Line grows      | Relationship established     |
+| Module expands  | More detail available        |
+| Module connects | Dependency discovered        |
+| Fade            | Previous assumption replaced |
+| Morph           | System evolution             |
+| Progress line   | Research stage               |
+| Counter         | Measured evidence            |
+| Collapse        | Abstraction                  |
+| Expand          | Detail                       |
+
+Nothing decorative.
+
+---
+
+# Illustration Language
+
+Everything should look like
+
+research documentation
+
+system diagrams
+
+decision trees
+
+modular architecture
+
+dependency graphs
+
+validation maps
+
+process flows
+
+network topology
+
+engineering notebooks
+
+No illustrations of people.
+
+No abstract blobs.
+
+No floating icons.
+
+---
+
+# Typography
+
+Large editorial typography.
+
+Comfortable reading rhythm.
+
+Heavy use of spacing.
+
+Every section reads like a chapter in a book.
+
+---
+
+# Design System
+
+Built from four primitives.
+
+```
+Node
+
+Line
+
+Module
+
+Frame
+```
+
+Every component is assembled from these.
+
+Buttons.
+
+Cards.
+
+Timelines.
+
+Diagrams.
+
+Navigation.
+
+Product explorer.
+
+Everything shares the same construction logic.
+
+---
+
+# Color System
+
+Strictly follow the brand system. 
+
+* **Structure:** `#141228` — primary text, structural elements, symbol color.
+* **Signal:** `#03EF62` — interaction states, active paths, highlights, progress, and primary actions.
+* **Clarity:** `#FFFFFF` — surfaces and separation.
+
+Signal Green should communicate activation, never decoration.
+
+---
+
+# Logo System
+
+Use the prescribed identity consistently. 
+
+* **Wordmark:** Outfit Semi Bold with geometric construction.
+* **Symbol:** Fixed eight-point radial mark representing the OctaGlobe core engine and eight core values.
+* Preserve the fixed color behavior and avoid decorative treatments.
+
+---
+
+# Interactive Signature
+
+The defining interaction of the site should be an **Operating System Explorer** rather than a conventional homepage.
+
+As the visitor scrolls, the interface gradually constructs a living map of OctaGlobe:
+
+* New nodes appear only after prerequisite concepts are understood.
+* Connections animate to explain dependencies rather than attract attention.
+* Clicking any module opens its complete lifecycle: **Opportunity → Research → Validation → MVP → Growth → Evolution**.
+* Every previously viewed concept remains visible, reinforcing that knowledge accumulates into a coherent operating model.
+
+By the final section, visitors are no longer looking at a collection of pages. They are navigating the complete OctaGlobe operating system—the company's philosophy made tangible. This directly reflects the brand definition of building connected, modular product systems through repeatable research and evolution rather than isolated software projects. 

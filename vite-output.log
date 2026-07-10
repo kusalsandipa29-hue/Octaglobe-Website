@@ -1,0 +1,30 @@
+
+> @figma/my-make-file@0.0.1 dev
+> vite --host 127.0.0.1
+
+
+  [32m[1mVITE[22m v6.3.5[39m  [2mready in [0m[1m22042[22m[2m[0m ms[22m
+
+  [32m➜[39m  [1mLocal[22m:   [36mhttp://127.0.0.1:[1m5173[22m/[39m
+[2m3:45:25 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/@fs/C:\Users\nandi\Desktop\Projects\Octaglobe-Website\src\app\pages\About.tsx, /src/styles/index.css[22m
+[2m3:45:42 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/@fs/C:\Users\nandi\Desktop\Projects\Octaglobe-Website\src\app\Root.tsx, /src/styles/index.css[22m
+[2m3:45:45 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles/index.css, /src/app/App.tsx[22m
+[2m3:45:48 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/@fs/C:\Users\nandi\Desktop\Projects\Octaglobe-Website\src\app\components\SiteFooter.tsx, /src/styles/index.css[22m
+[2m3:46:27 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/@fs/C:\Users\nandi\Desktop\Projects\Octaglobe-Website\src\app\pages\Blog.tsx, /src/styles/index.css[22m
+[2m3:46:46 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/@fs/C:\Users\nandi\Desktop\Projects\Octaglobe-Website\src\app\pages\NotFound.tsx, /src/styles/index.css[22m
+[2m3:46:53 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/@fs/C:\Users\nandi\Desktop\Projects\Octaglobe-Website\src\app\components\MobileNav.tsx, /src/styles/index.css[22m
+[2m3:46:53 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/@fs/C:\Users\nandi\Desktop\Projects\Octaglobe-Website\src\app\pages\Home.tsx, /src/styles/index.css[22m
+[2m3:46:57 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/@fs/C:\Users\nandi\Desktop\Projects\Octaglobe-Website\src\app\components\SiteFooter.tsx, /src/styles/index.css[22m
+[2m3:46:57 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/@fs/C:\Users\nandi\Desktop\Projects\Octaglobe-Website\src\app\components\chapters\Landing.tsx, /src/styles/index.css[22m
+[2m3:47:01 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles/index.css, /src/app/App.tsx[22m
+[2m3:47:19 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/@fs/C:\Users\nandi\Desktop\Projects\Octaglobe-Website\src\app\components\chapters\WhyWeExist.tsx, /src/styles/index.css[22m
+[2m3:47:22 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/@fs/C:\Users\nandi\Desktop\Projects\Octaglobe-Website\src\app\components\chapters\Opportunity.tsx, /src/styles/index.css[22m
+[2m3:47:24 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/@fs/C:\Users\nandi\Desktop\Projects\Octaglobe-Website\src\app\components\chapters\Philosophy.tsx, /src/styles/index.css[22m
+[2m3:47:28 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/@fs/C:\Users\nandi\Desktop\Projects\Octaglobe-Website\src\app\components\chapters\Connect.tsx, /src/styles/index.css[22m
+[2m3:47:54 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/@fs/C:\Users\nandi\Desktop\Projects\Octaglobe-Website\src\app\pages\Blog.tsx, /src/styles/index.css[22m
+[2m3:47:55 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/@fs/C:\Users\nandi\Desktop\Projects\Octaglobe-Website\src\app\components\chapters\OperatingModel.tsx, /src/styles/index.css[22m
+[2m3:47:58 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles/index.css, /src/app/App.tsx[22m
+[2m3:47:58 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/@fs/C:\Users\nandi\Desktop\Projects\Octaglobe-Website\src\app\components\chapters\ResearchEngine.tsx, /src/styles/index.css[22m
+[2m3:49:26 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles/index.css, /src/app/App.tsx[22m
+[2m4:12:57 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/@fs/C:\Users\nandi\Desktop\Projects\Octaglobe-Website\src\app\components\chapters\Landing.tsx, /src/styles/index.css[22m
+[2m4:18:36 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/styles/home-responsive.css[22m

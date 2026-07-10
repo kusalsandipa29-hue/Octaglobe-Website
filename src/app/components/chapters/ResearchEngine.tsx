@@ -35,15 +35,17 @@ export function ResearchEngine() {
         </p>
       </Reveal>
 
-      <Reveal delay={0.15} style={{ marginTop: 72 }}>
+      <Reveal className="home-research-interactive" delay={0.15} style={{ marginTop: 72 }}>
         {/* Horizontal timeline */}
-        <div style={{ display: 'flex', alignItems: 'stretch', overflowX: 'auto', paddingBottom: 8 }}>
+        <div className="home-research-timeline" style={{ display: 'flex', alignItems: 'stretch', overflowX: 'auto', paddingBottom: 8 }}>
           {STEPS.map((step, i) => {
             const active = open === i;
             return (
-              <div key={step.key} style={{ display: 'flex', alignItems: 'stretch', flex: '1 0 auto' }}>
+              <div className="home-research-step" key={step.key} style={{ display: 'flex', alignItems: 'stretch', flex: '1 0 auto' }}>
                 <button
+                  className="home-research-step-button"
                   onClick={() => setOpen(i)}
+                  aria-pressed={active}
                   style={{
                     flex: 1,
                     minWidth: 120,
@@ -94,10 +96,11 @@ export function ResearchEngine() {
               exit={{ opacity: 0, y: -6 }}
               transition={{ duration: 0.28 }}
               style={{ display: 'grid', gridTemplateColumns: '220px 1fr', gap: 40, alignItems: 'center' }}
-              className="lg:grid-cols-[220px_1fr] grid-cols-1"
+              className="home-research-detail lg:grid-cols-[220px_1fr] grid-cols-1"
             >
               {/* Document mock */}
               <div
+                className="home-research-document"
                 style={{
                   border: `1px solid ${COLORS.line}`,
                   borderRadius: 10,
@@ -122,7 +125,7 @@ export function ResearchEngine() {
                 ))}
               </div>
 
-              <div>
+              <div className="home-research-copy">
                 <h3 style={{ fontSize: 24, fontWeight: 600, color: COLORS.structure, letterSpacing: '-0.02em', marginBottom: 14 }}>
                   {STEPS[open].title}
                 </h3>

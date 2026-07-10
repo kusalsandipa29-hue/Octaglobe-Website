@@ -1,0 +1,296 @@
+.mobile-nav,
+.mobile-nav__layer {
+  display: none;
+}
+
+@media (max-width: 1023.98px) {
+  .site-footer__inner {
+    padding: 72px 32px 36px !important;
+  }
+
+  .site-footer__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    column-gap: 32px !important;
+    row-gap: 48px !important;
+  }
+
+  .site-footer__grid > * {
+    min-width: 0;
+  }
+
+  .site-footer__bottom {
+    margin-top: 64px !important;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .site-shell__desktop-nav {
+    display: none !important;
+  }
+
+  .site-shell--subpage {
+    padding-top: 68px !important;
+  }
+
+  .mobile-nav {
+    position: fixed;
+    inset: 0 0 auto;
+    z-index: 200;
+    display: block;
+    color: #141228;
+    transition: background-color 0.28s ease, border-color 0.28s ease, box-shadow 0.28s ease;
+  }
+
+  .mobile-nav--solid {
+    background-color: rgba(255, 255, 255, 0.94);
+    border-bottom: 1px solid rgba(20, 18, 40, 0.06);
+    box-shadow: 0 8px 24px rgba(20, 18, 40, 0.06);
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+  }
+
+  .mobile-nav--overlay {
+    background-color: transparent;
+    border-bottom: 1px solid transparent;
+    box-shadow: none;
+  }
+
+  .mobile-nav__bar {
+    display: flex;
+    width: 100%;
+    max-width: 1180px;
+    height: 68px;
+    margin: 0 auto;
+    padding: 0 20px;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .mobile-nav__brand,
+  .mobile-nav__trigger,
+  .mobile-nav__close,
+  .mobile-nav__link {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .mobile-nav__brand {
+    display: inline-flex;
+    min-width: 44px;
+    min-height: 44px;
+    align-items: center;
+  }
+
+  .mobile-nav__brand img {
+    display: block;
+    width: auto;
+    height: 22px;
+  }
+
+  .mobile-nav__trigger,
+  .mobile-nav__close {
+    display: inline-flex;
+    width: 44px;
+    height: 44px;
+    margin: 0;
+    padding: 0;
+    flex: 0 0 44px;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+    border-radius: 10px;
+    background: transparent;
+    color: inherit;
+    cursor: pointer;
+  }
+
+  .mobile-nav__trigger {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .mobile-nav__trigger span {
+    display: block;
+    width: 21px;
+    height: 1.5px;
+    border-radius: 999px;
+    background-color: currentColor;
+  }
+
+  .mobile-nav--overlay .mobile-nav__trigger {
+    color: #fff;
+  }
+
+  .mobile-nav__trigger:focus-visible,
+  .mobile-nav__close:focus-visible,
+  .mobile-nav__link:focus-visible,
+  .mobile-nav__brand:focus-visible {
+    outline: 2px solid #03ef62;
+    outline-offset: 2px;
+  }
+
+  .mobile-nav__layer {
+    position: fixed;
+    inset: 0;
+    z-index: 210;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .mobile-nav__backdrop {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: rgba(20, 18, 40, 0.58);
+    cursor: pointer;
+  }
+
+  .mobile-nav__drawer {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    width: min(88vw, 360px);
+    height: 100vh;
+    height: 100dvh;
+    padding: 16px 20px 28px;
+    flex-direction: column;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    background: #fff;
+    box-shadow: -18px 0 48px rgba(20, 18, 40, 0.2);
+  }
+
+  .mobile-nav__drawer-head {
+    display: flex;
+    min-height: 52px;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(20, 18, 40, 0.08);
+    color: rgba(20, 18, 40, 0.55);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+
+  .mobile-nav__close {
+    margin-right: -8px;
+    color: #141228;
+    font-family: Arial, sans-serif;
+    font-size: 30px;
+    font-weight: 300;
+    line-height: 1;
+  }
+
+  .mobile-nav__links {
+    display: flex;
+    padding-top: 24px;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .mobile-nav__group {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .mobile-nav__group-label {
+    margin-bottom: 6px;
+    color: rgba(20, 18, 40, 0.4);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+
+  .mobile-nav__link {
+    position: relative;
+    display: flex;
+    width: 100%;
+    min-height: 48px;
+    margin: 0;
+    padding: 0 14px;
+    align-items: center;
+    border: 0;
+    border-radius: 10px;
+    background: transparent;
+    color: rgba(20, 18, 40, 0.7);
+    cursor: pointer;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-align: left;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+
+  .mobile-nav__link::before {
+    position: absolute;
+    left: 0;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: #03ef62;
+    content: '';
+    opacity: 0;
+    transform: scale(0.5);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+  }
+
+  .mobile-nav__link:hover,
+  .mobile-nav__link--active {
+    background: rgba(20, 18, 40, 0.035);
+    color: #141228;
+  }
+
+  .mobile-nav__link--active::before {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  .site-footer__inner {
+    padding: 64px 20px 32px !important;
+  }
+
+  .site-footer__grid {
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 40px !important;
+  }
+
+  .site-footer__brand {
+    margin-bottom: 4px;
+  }
+
+  .site-footer__bottom {
+    margin-top: 52px !important;
+    padding-top: 24px !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 12px !important;
+  }
+
+  .site-footer__link {
+    display: inline-flex !important;
+    min-height: 44px;
+    align-items: center;
+  }
+}
+
+@media (max-width: 359.98px) {
+  .mobile-nav__bar,
+  .mobile-nav__drawer {
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) and (max-width: 767.98px) {
+  .mobile-nav,
+  .mobile-nav__link::before {
+    transition: none;
+  }
+}

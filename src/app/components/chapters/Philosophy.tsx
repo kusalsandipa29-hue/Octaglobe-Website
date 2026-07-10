@@ -28,10 +28,11 @@ export function Philosophy() {
 
       <div
         style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 2, marginTop: 72, border: `1px solid ${COLORS.line}`, borderRadius: 16, overflow: 'hidden', backgroundColor: COLORS.line }}
-        className="lg:grid-cols-2 grid-cols-1"
+        className="home-philosophy-grid lg:grid-cols-2 grid-cols-1"
       >
         {PRINCIPLES.map((p, i) => (
           <motion.div
+            className="home-philosophy-card"
             key={p.principle}
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -49,7 +50,7 @@ export function Philosophy() {
                 {p.principle}
               </h3>
             </div>
-            <p style={{ fontSize: 14, lineHeight: 1.65, color: COLORS.ink55, paddingLeft: 30 }}>{p.note}</p>
+            <p className="home-philosophy-note" style={{ fontSize: 14, lineHeight: 1.65, color: COLORS.ink55, paddingLeft: 30 }}>{p.note}</p>
           </motion.div>
         ))}
       </div>

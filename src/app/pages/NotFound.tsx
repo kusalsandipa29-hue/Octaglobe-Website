@@ -4,6 +4,7 @@ import { COLORS, MONO, MAX_W } from '../components/primitives';
 export function NotFound() {
   return (
     <section
+      className="not-found-page"
       style={{
         minHeight: '100vh',
         display: 'flex',
@@ -12,7 +13,7 @@ export function NotFound() {
         backgroundColor: COLORS.clarity,
       }}
     >
-      <div style={{ maxWidth: MAX_W, padding: '0 40px', textAlign: 'center' }}>
+      <div className="not-found-page__content" style={{ maxWidth: MAX_W, padding: '0 40px', textAlign: 'center' }}>
         <div style={{ fontFamily: MONO, fontSize: 12, letterSpacing: '0.2em', textTransform: 'uppercase', color: COLORS.signal, marginBottom: 20 }}>
           404 — Off the map
         </div>
@@ -24,6 +25,7 @@ export function NotFound() {
         </p>
         <Link
           to="/"
+          className="not-found-page__link"
           style={{
             display: 'inline-flex',
             alignItems: 'center',

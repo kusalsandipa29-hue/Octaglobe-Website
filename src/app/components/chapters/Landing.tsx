@@ -6,6 +6,7 @@ export function Landing() {
   return (
     <section
       id="landing"
+      className="home-landing"
       style={{
         minHeight: '100vh',
         display: 'flex',
@@ -18,6 +19,7 @@ export function Landing() {
     >
       {/* Background video */}
       <video
+        className="home-landing-video"
         src={heroVideo}
         autoPlay
         muted
@@ -35,6 +37,7 @@ export function Landing() {
 
       {/* Dark scrim for legibility */}
       <div
+        className="home-landing-content"
         style={{
           position: 'absolute',
           inset: 0,
@@ -69,6 +72,7 @@ export function Landing() {
         }}
       >
         <motion.div
+          className="home-landing-eyebrow"
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
@@ -81,6 +85,7 @@ export function Landing() {
         </motion.div>
 
         <motion.h1
+          className="home-landing-title"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.32 }}
@@ -94,11 +99,12 @@ export function Landing() {
           }}
         >
           We discover opportunities
-          <br />
+          <br className="home-landing-title-break" />{' '}
           and build products people use.
         </motion.h1>
 
         <motion.p
+          className="home-landing-lede"
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.5 }}
@@ -117,6 +123,7 @@ export function Landing() {
 
         {/* Scroll cue — no CTA */}
         <motion.button
+          className="home-landing-scroll"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.7, delay: 0.9 }}
@@ -139,6 +146,7 @@ export function Landing() {
         >
           Explore the System
           <motion.span
+            className="home-landing-scroll-icon"
             animate={{ y: [0, 6, 0] }}
             transition={{ duration: 1.6, repeat: Infinity, ease: 'easeInOut' }}
             style={{ display: 'inline-flex' }}

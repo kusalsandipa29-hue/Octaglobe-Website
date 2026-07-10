@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { COLORS, MONO, MAX_W, Reveal, Frame } from '../components/primitives';
 import { SiteFooter } from '../components/SiteFooter';
@@ -141,6 +141,7 @@ const CAT_INDEX: Record<Category, string> = {
 export function Blog() {
   const [active, setActive] = useState<'All' | Category>('All');
   const [reading, setReading] = useState<Post | null>(null);
+  const closeReader = useCallback(() => setReading(null), []);
 
   const featured = POSTS.find((p) => p.featured)!;
   const filtered = useMemo(() => {
@@ -149,10 +150,11 @@ export function Blog() {
   }, [active]);
 
   return (
-    <div style={{ backgroundColor: COLORS.clarity }}>
-      {/* Header */}
-      <section style={{ padding: '150px 0 48px' }}>
-        <div style={{ maxWidth: MAX_W, margin: '0 auto', padding: '0 40px' }}>
+    <div className="blog-page" style={{ backgroundColor: COLORS.clarity }}>
+      <main className="blog-page__main">
+        {/* Header */}
+        <section className="blog-page__header" style={{ padding: '150px 0 48px' }}>
+          <div className="blog-page__container" style={{ maxWidth: MAX_W, margin: '0 auto', padding: '0 40px' }}>
           <Reveal>
             <h1 style={{ fontSize: 'clamp(44px, 6vw, 84px)', fontWeight: 600, letterSpacing: '-0.04em', color: COLORS.structure }}>
               Blog
@@ -166,14 +168,16 @@ export function Blog() {
           </Reveal>
 
           {/* Filters */}
-          <Reveal delay={0.14}>
-            <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10, marginTop: 40 }}>
+            <Reveal delay={0.14}>
+              <div className="blog-page__filters" style={{ display: 'flex', flexWrap: 'wrap', gap: 10, marginTop: 40 }}>
               {CATEGORIES.map((c) => {
                 const on = active === c;
                 return (
                   <button
                     key={c}
                     onClick={() => setActive(c)}
+                    aria-pressed={on}
+                    className="blog-page__filter"
                     style={{
                       fontFamily: MONO,
                       fontSize: 12,
@@ -192,20 +196,21 @@ export function Blog() {
                   </button>
                 );
               })}
-            </div>
-          </Reveal>
-        </div>
-      </section>
+              </div>
+            </Reveal>
+          </div>
+        </section>
 
-      {/* Featured */}
-      <section style={{ paddingBottom: 24 }}>
-        <div style={{ maxWidth: MAX_W, margin: '0 auto', padding: '0 40px' }}>
+        {/* Featured */}
+        <section className="blog-page__featured" style={{ paddingBottom: 24 }}>
+          <div className="blog-page__container" style={{ maxWidth: MAX_W, margin: '0 auto', padding: '0 40px' }}>
           <motion.button
             onClick={() => setReading(featured)}
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+            className="blog-page__featured-button"
             style={{
               display: 'block',
               width: '100%',
@@ -219,10 +224,10 @@ export function Blog() {
             }}
           >
             <div
+              className="blog-page__featured-grid lg:grid-cols-2 grid-cols-1"
               style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', minHeight: 380 }}
-              className="lg:grid-cols-2 grid-cols-1"
             >
-              <div style={{ padding: '56px 56px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', gap: 40 }}>
+              <div className="blog-page__featured-copy" style={{ padding: '56px 56px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', gap: 40 }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
                   <span style={{ width: 6, height: 6, borderRadius: '50%', backgroundColor: COLORS.signal }} />
                   <span style={{ fontFamily: MONO, fontSize: 11, letterSpacing: '0.16em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.5)' }}>
@@ -246,7 +251,7 @@ export function Blog() {
               </div>
 
               {/* Node-diagram visual panel */}
-              <div style={{ position: 'relative', backgroundColor: 'rgba(3,239,98,0.06)', overflow: 'hidden', minHeight: 260 }}>
+              <div className="blog-page__featured-visual" style={{ position: 'relative', backgroundColor: 'rgba(3,239,98,0.06)', overflow: 'hidden', minHeight: 260 }}>
                 <div
                   style={{
                     position: 'absolute',
@@ -272,16 +277,16 @@ export function Blog() {
               </div>
             </div>
           </motion.button>
-        </div>
-      </section>
+          </div>
+        </section>
 
-      {/* Grid */}
-      <section style={{ padding: '32px 0 80px' }}>
-        <div style={{ maxWidth: MAX_W, margin: '0 auto', padding: '0 40px' }}>
+        {/* Grid */}
+        <section className="blog-page__posts" style={{ padding: '32px 0 80px' }}>
+          <div className="blog-page__container" style={{ maxWidth: MAX_W, margin: '0 auto', padding: '0 40px' }}>
           <motion.div
             layout
+            className="blog-page__posts-grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1"
             style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 24 }}
-            className="lg:grid-cols-3 sm:grid-cols-2 grid-cols-1"
           >
             <AnimatePresence mode="popLayout">
               {filtered.map((post) => (
@@ -295,14 +300,15 @@ export function Blog() {
               // no posts in this category yet
             </p>
           )}
-        </div>
-      </section>
+          </div>
+        </section>
+      </main>
 
       <SiteFooter />
 
       {/* Reader modal */}
       <AnimatePresence>
-        {reading && <Reader post={reading} onClose={() => setReading(null)} />}
+        {reading && <Reader post={reading} onClose={closeReader} />}
       </AnimatePresence>
     </div>
   );
@@ -312,6 +318,7 @@ function PostCard({ post, onOpen }: { post: Post; onOpen: () => void }) {
   const [hover, setHover] = useState(false);
   return (
     <motion.button
+      className="blog-page__post-card"
       layout
       initial={{ opacity: 0, y: 16 }}
       animate={{ opacity: 1, y: 0 }}
@@ -337,6 +344,7 @@ function PostCard({ post, onOpen }: { post: Post; onOpen: () => void }) {
           <ImageWithFallback
             src={post.image}
             alt={post.title}
+            loading="lazy"
             style={{
               width: '100%',
               height: '100%',
@@ -349,7 +357,7 @@ function PostCard({ post, onOpen }: { post: Post; onOpen: () => void }) {
           <div style={{ width: '100%', height: '100%', backgroundColor: 'rgba(3,239,98,0.08)' }} />
         )}
       </div>
-      <div style={{ padding: '24px 24px 28px' }}>
+      <div className="blog-page__post-card-body" style={{ padding: '24px 24px 28px' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 14 }}>
           <span style={{ fontFamily: MONO, fontSize: 10, color: COLORS.signal }}>{CAT_INDEX[post.category]}</span>
           <span style={{ fontFamily: MONO, fontSize: 11, letterSpacing: '0.12em', textTransform: 'uppercase', color: COLORS.ink40 }}>
@@ -369,8 +377,37 @@ function PostCard({ post, onOpen }: { post: Post; onOpen: () => void }) {
 }
 
 function Reader({ post, onClose }: { post: Post; onClose: () => void }) {
+  const closeButtonRef = useRef<HTMLButtonElement>(null);
+
+  useEffect(() => {
+    const previouslyFocused = document.activeElement instanceof HTMLElement ? document.activeElement : null;
+    const previousBodyOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+
+    const focusTimer = window.setTimeout(() => closeButtonRef.current?.focus(), 0);
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        event.preventDefault();
+        onClose();
+      } else if (event.key === 'Tab') {
+        // The reader has one interactive control, so keep keyboard focus inside it.
+        event.preventDefault();
+        closeButtonRef.current?.focus();
+      }
+    };
+
+    document.addEventListener('keydown', handleKeyDown);
+    return () => {
+      window.clearTimeout(focusTimer);
+      document.removeEventListener('keydown', handleKeyDown);
+      document.body.style.overflow = previousBodyOverflow;
+      previouslyFocused?.focus();
+    };
+  }, [onClose]);
+
   return (
     <motion.div
+      className="blog-reader"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
@@ -389,6 +426,10 @@ function Reader({ post, onClose }: { post: Post; onClose: () => void }) {
       }}
     >
       <motion.article
+        className="blog-reader__dialog"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby={`blog-reader-title-${post.id}`}
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: 20 }}
@@ -403,7 +444,7 @@ function Reader({ post, onClose }: { post: Post; onClose: () => void }) {
           height: 'fit-content',
         }}
       >
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 32 }}>
+        <div className="blog-reader__header" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 32 }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
             <span style={{ width: 6, height: 6, borderRadius: '50%', backgroundColor: COLORS.signal }} />
             <span style={{ fontFamily: MONO, fontSize: 11, letterSpacing: '0.14em', textTransform: 'uppercase', color: COLORS.ink40 }}>
@@ -411,8 +452,10 @@ function Reader({ post, onClose }: { post: Post; onClose: () => void }) {
             </span>
           </div>
           <button
+            ref={closeButtonRef}
             onClick={onClose}
-            aria-label="Close"
+            aria-label="Close article"
+            className="blog-reader__close"
             style={{
               width: 34,
               height: 34,
@@ -429,7 +472,7 @@ function Reader({ post, onClose }: { post: Post; onClose: () => void }) {
           </button>
         </div>
 
-        <h1 style={{ fontSize: 'clamp(28px, 4vw, 44px)', fontWeight: 600, lineHeight: 1.15, letterSpacing: '-0.03em', color: COLORS.structure, marginBottom: 20 }}>
+        <h1 id={`blog-reader-title-${post.id}`} style={{ fontSize: 'clamp(28px, 4vw, 44px)', fontWeight: 600, lineHeight: 1.15, letterSpacing: '-0.03em', color: COLORS.structure, marginBottom: 20 }}>
           {post.title}
         </h1>
         <div style={{ fontFamily: MONO, fontSize: 12, color: COLORS.ink40, marginBottom: 32 }}>

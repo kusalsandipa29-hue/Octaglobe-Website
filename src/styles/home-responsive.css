@@ -1,0 +1,370 @@
+/* Home-only responsive corrections. Desktop declarations remain owned by the
+   components; every visual override here stops before the 1024px breakpoint. */
+
+@media (max-width: 1023.98px) {
+  .home-page > section:not(#landing):not(#connect) {
+    padding: 104px 0 !important;
+  }
+
+  .home-page > #connect {
+    padding: 104px 0 0 !important;
+  }
+
+  .home-page > section:not(#landing) > div {
+    padding-right: 32px !important;
+    padding-left: 32px !important;
+  }
+
+  .home-landing {
+    min-height: 100vh !important;
+    min-height: 100svh !important;
+  }
+
+  .home-landing-video {
+    object-position: 50% 50%;
+  }
+
+  .home-landing-content {
+    padding: 112px 32px 64px !important;
+  }
+
+  .home-landing-title {
+    font-size: clamp(40px, 8vw, 68px) !important;
+  }
+
+  .home-landing-lede {
+    font-size: 18px !important;
+    margin-top: 30px !important;
+  }
+
+  .home-landing-scroll {
+    min-height: 44px;
+    margin-top: 48px !important;
+    padding: 10px 0 !important;
+    touch-action: manipulation;
+  }
+
+  .home-why-grid,
+  .home-opportunity-grid,
+  .home-operating-detail-grid,
+  .home-research-detail,
+  .home-philosophy-grid,
+  .home-connect-grid {
+    min-width: 0;
+  }
+
+  .home-why-grid > *,
+  .home-opportunity-grid > *,
+  .home-operating-detail-grid > *,
+  .home-research-detail > *,
+  .home-philosophy-grid > *,
+  .home-connect-grid > * {
+    min-width: 0;
+  }
+
+  .home-why-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 40px !important;
+    margin-top: 64px !important;
+  }
+
+  .home-why-divider {
+    display: none !important;
+  }
+
+  .home-opportunity-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 40px !important;
+    margin-top: 64px !important;
+  }
+
+  .home-operating-interactive {
+    min-width: 0;
+    margin-top: 56px !important;
+  }
+
+  .home-operating-rail {
+    flex-wrap: nowrap !important;
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    scroll-padding-inline: 32px;
+    scroll-snap-type: inline mandatory;
+    scrollbar-width: none;
+    margin-right: -32px;
+    margin-bottom: 32px !important;
+    margin-left: -32px;
+    padding: 4px 32px 16px;
+  }
+
+  .home-operating-rail::-webkit-scrollbar,
+  .home-research-timeline::-webkit-scrollbar {
+    display: none;
+  }
+
+  .home-operating-stage {
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+  }
+
+  .home-operating-stage-button {
+    min-width: 112px;
+    min-height: 64px;
+    touch-action: manipulation;
+  }
+
+  .home-operating-interactive > div:nth-child(2) {
+    min-height: 0 !important;
+    padding: 32px !important;
+  }
+
+  .home-operating-detail-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  .home-operating-detail-cell {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+
+  .home-research-interactive {
+    min-width: 0;
+    margin-top: 56px !important;
+  }
+
+  .home-research-timeline {
+    overscroll-behavior-inline: contain;
+    scroll-padding-inline: 32px;
+    scroll-snap-type: inline mandatory;
+    scrollbar-width: none;
+    margin-right: -32px;
+    margin-left: -32px;
+    padding-right: 32px;
+    padding-bottom: 16px !important;
+    padding-left: 32px;
+  }
+
+  .home-research-step {
+    scroll-snap-align: start;
+  }
+
+  .home-research-step-button {
+    min-width: 128px !important;
+    min-height: 72px;
+    touch-action: manipulation;
+  }
+
+  .home-research-interactive > div:nth-child(2) {
+    margin-top: 24px !important;
+    padding: 32px !important;
+  }
+
+  .home-research-detail {
+    grid-template-columns: minmax(0, 1fr) !important;
+    align-items: start !important;
+    gap: 28px !important;
+  }
+
+  .home-research-document {
+    width: 100%;
+    max-width: 360px;
+  }
+
+  .home-research-copy {
+    min-width: 0;
+  }
+
+  .home-philosophy-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    margin-top: 64px !important;
+  }
+
+  .home-philosophy-card {
+    min-width: 0;
+    padding: 28px !important;
+  }
+
+  .home-connect-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  .home-channel-link {
+    min-width: 0;
+  }
+
+  .home-channel-value {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+
+  .home-connect-footer {
+    margin-top: 88px !important;
+  }
+
+  .home-connect-footer-brand {
+    min-width: 0;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .home-page > section:not(#landing):not(#connect) {
+    padding: 88px 0 !important;
+  }
+
+  .home-page > #connect {
+    padding: 88px 0 0 !important;
+  }
+
+  .home-page > section:not(#landing) > div {
+    padding-right: 24px !important;
+    padding-left: 24px !important;
+  }
+
+  .home-landing-content {
+    padding: 108px 24px 52px !important;
+  }
+
+  .home-landing-eyebrow {
+    margin-bottom: 28px !important;
+  }
+
+  .home-landing-title {
+    font-size: clamp(34px, 10vw, 52px) !important;
+    line-height: 1.07 !important;
+  }
+
+  .home-landing-title-break {
+    display: none;
+  }
+
+  .home-landing-lede {
+    font-size: 17px !important;
+    line-height: 1.65 !important;
+    margin-top: 26px !important;
+  }
+
+  .home-landing-scroll {
+    margin-top: 36px !important;
+  }
+
+  .home-why-grid,
+  .home-opportunity-grid,
+  .home-philosophy-grid {
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 52px !important;
+    margin-top: 56px !important;
+  }
+
+  .home-operating-rail,
+  .home-research-timeline {
+    scroll-padding-inline: 24px;
+    margin-right: -24px;
+    margin-left: -24px;
+    padding-right: 24px;
+    padding-left: 24px;
+  }
+
+  .home-operating-interactive > div:nth-child(2),
+  .home-research-interactive > div:nth-child(2) {
+    padding: 24px !important;
+  }
+
+  .home-operating-detail-heading {
+    margin-bottom: 24px !important;
+  }
+
+  .home-operating-detail-heading h3 {
+    font-size: 26px !important;
+  }
+
+  .home-philosophy-card {
+    padding: 24px !important;
+  }
+
+  .home-connect-footer {
+    margin-top: 72px !important;
+    padding-bottom: 36px !important;
+  }
+}
+
+@media (max-width: 639.98px) {
+  .home-page > section:not(#landing):not(#connect) {
+    padding: 76px 0 !important;
+  }
+
+  .home-page > #connect {
+    padding: 76px 0 0 !important;
+  }
+
+  .home-page > section:not(#landing) > div {
+    padding-right: 20px !important;
+    padding-left: 20px !important;
+  }
+
+  .home-landing-content {
+    padding: 104px 20px 44px !important;
+  }
+
+  .home-operating-rail,
+  .home-research-timeline {
+    scroll-padding-inline: 20px;
+    margin-right: -20px;
+    margin-left: -20px;
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+
+  .home-operating-interactive > div:nth-child(2),
+  .home-research-interactive > div:nth-child(2) {
+    padding: 20px !important;
+  }
+
+  .home-operating-detail-grid,
+  .home-connect-grid {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  .home-operating-practice {
+    flex-direction: column !important;
+    gap: 8px !important;
+  }
+
+  .home-philosophy-note {
+    padding-left: 0 !important;
+  }
+
+  .home-channel-link {
+    padding: 24px 18px !important;
+  }
+
+  .home-connect-footer-row {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+
+  .home-connect-footer-brand {
+    align-items: flex-start !important;
+  }
+
+  .home-connect-footer-brand span,
+  .home-connect-footer-copy {
+    overflow-wrap: anywhere;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) and (max-width: 1023.98px) {
+  .home-page *,
+  .home-page *::before,
+  .home-page *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .home-landing-video {
+    display: none;
+  }
+
+  .home-landing-scroll-icon {
+    transform: none !important;
+  }
+}

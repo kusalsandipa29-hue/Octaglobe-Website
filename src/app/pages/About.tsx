@@ -6,13 +6,18 @@ import { ImageWithFallback } from '../components/figma/ImageWithFallback';
 import galleryImg1 from '../../imports/IMG-20260702-WA0033.jpg.jpeg';
 import galleryImg2 from '../../imports/IMG_5372.JPG.jpeg';
 import galleryImg3 from '../../imports/IMG_5373.JPG.jpeg';
+import galleryImg4 from '../../imports/WhatsApp Image 2026-07-10 at 9.13.56 PM.jpeg';
+import galleryImg5 from '../../imports/WhatsApp Image 2026-07-10 at 9.35.32 PM.jpeg';
 import nibm2 from '../../imports/nibm event/FB_IMG_1781829391352.jpg';
 import founderImage from '../../imports/Lockup_1-1.png';
+import '../../styles/pages-responsive.css';
 
 const GALLERY = [
   galleryImg1,
   galleryImg2,
   galleryImg3,
+  galleryImg4,
+  galleryImg5,
   nibm2,
 ];
 
@@ -71,10 +76,10 @@ const STATS = [
 export function About() {
 
   return (
-    <div style={{ backgroundColor: COLORS.clarity }}>
+    <div className="about-page" style={{ backgroundColor: COLORS.clarity }}>
       {/* Hero */}
-      <section style={{ padding: '160px 0 72px', textAlign: 'center' }}>
-        <div style={{ maxWidth: MAX_W, margin: '0 auto', padding: '0 40px' }}>
+      <section className="about-page__hero" style={{ padding: '160px 0 72px', textAlign: 'center' }}>
+        <div className="about-page__container" style={{ maxWidth: MAX_W, margin: '0 auto', padding: '0 40px' }}>
           <Reveal>
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 10, marginBottom: 32 }}>
               <span style={{ width: 6, height: 6, borderRadius: '50%', backgroundColor: COLORS.signal }} />
@@ -105,8 +110,8 @@ export function About() {
       </section>
 
       {/* Gallery — horizontal scrolling event photos */}
-      <section style={{ paddingBottom: 40 }}>
-        <div style={{ maxWidth: MAX_W, margin: '0 auto', padding: '0 40px' }}>
+      <section className="about-page__gallery" style={{ paddingBottom: 40 }}>
+        <div className="about-page__container" style={{ maxWidth: MAX_W, margin: '0 auto', padding: '0 40px' }}>
           <div
             className="about-gallery--scroll"
             style={{
@@ -153,13 +158,13 @@ export function About() {
       </section>
 
       {/* Narrative sections */}
-      <section style={{ padding: '80px 0' }}>
-        <div style={{ maxWidth: MAX_W, margin: '0 auto', padding: '0 40px', display: 'flex', flexDirection: 'column', gap: 96 }}>
+      <section className="about-page__narrative" style={{ padding: '80px 0' }}>
+        <div className="about-page__container about-page__narrative-list" style={{ maxWidth: MAX_W, margin: '0 auto', padding: '0 40px', display: 'flex', flexDirection: 'column', gap: 96 }}>
           {NARRATIVE.map((n, i) => (
             <div
               key={n.heading}
+              className="about-page__narrative-row lg:grid-cols-2 grid-cols-1"
               style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 64, alignItems: 'start' }}
-              className="lg:grid-cols-2 grid-cols-1"
             >
               <Reveal>
                 <h2 style={{ fontSize: 'clamp(26px, 3vw, 36px)', fontWeight: 600, lineHeight: 1.2, letterSpacing: '-0.02em', color: COLORS.structure, maxWidth: 420 }}>
@@ -186,14 +191,14 @@ export function About() {
       </section>
 
       {/* Stats */}
-      <section style={{ padding: '40px 0' }}>
-        <div style={{ maxWidth: MAX_W, margin: '0 auto', padding: '0 40px' }}>
+      <section className="about-page__stats" style={{ padding: '40px 0' }}>
+        <div className="about-page__container" style={{ maxWidth: MAX_W, margin: '0 auto', padding: '0 40px' }}>
           <div
+            className="about-page__stats-grid lg:grid-cols-4 grid-cols-2"
             style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 2, border: `1px solid ${COLORS.line}`, borderRadius: 16, overflow: 'hidden', backgroundColor: COLORS.line }}
-            className="lg:grid-cols-4 grid-cols-2"
           >
             {STATS.map((s) => (
-              <div key={s.label} style={{ backgroundColor: COLORS.clarity, padding: '36px 28px' }}>
+              <div className="about-page__stat" key={s.label} style={{ backgroundColor: COLORS.clarity, padding: '36px 28px' }}>
                 <div style={{ fontSize: 44, fontWeight: 600, letterSpacing: '-0.03em', color: COLORS.structure }}>
                   <Counter to={s.value} suffix={s.suffix} />
                 </div>
@@ -207,16 +212,16 @@ export function About() {
       </section>
 
       {/* Reason cards (2x2) */}
-      <section style={{ padding: '80px 0' }}>
-        <div style={{ maxWidth: MAX_W, margin: '0 auto', padding: '0 40px' }}>
+      <section className="about-page__reasons" style={{ padding: '80px 0' }}>
+        <div className="about-page__container" style={{ maxWidth: MAX_W, margin: '0 auto', padding: '0 40px' }}>
           <Reveal>
-            <h2 style={{ fontSize: 'clamp(26px, 3vw, 40px)', fontWeight: 600, letterSpacing: '-0.02em', color: COLORS.structure, marginBottom: 48, maxWidth: 620 }}>
+            <h2 className="about-page__reasons-title" style={{ fontSize: 'clamp(26px, 3vw, 40px)', fontWeight: 600, letterSpacing: '-0.02em', color: COLORS.structure, marginBottom: 48, maxWidth: 620 }}>
               Why teams trust the way we work.
             </h2>
           </Reveal>
           <div
+            className="about-page__reasons-grid lg:grid-cols-2 grid-cols-1"
             style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 16 }}
-            className="lg:grid-cols-2 grid-cols-1"
           >
             {REASONS.map((r, i) => (
               <motion.div
@@ -225,6 +230,7 @@ export function About() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.45, delay: (i % 2) * 0.08 }}
+                className="about-page__reason-card"
               >
                 <Frame ticks style={{ padding: '32px 32px', height: '100%' }}>
                   <div style={{ fontFamily: MONO, fontSize: 12, color: COLORS.signal, marginBottom: 16 }}>
@@ -241,8 +247,8 @@ export function About() {
       </section>
 
       {/* Closing statement */}
-      <section style={{ padding: '96px 0 120px', textAlign: 'center' }}>
-        <div style={{ maxWidth: 760, margin: '0 auto', padding: '0 40px' }}>
+      <section className="about-page__closing" style={{ padding: '96px 0 120px', textAlign: 'center' }}>
+        <div className="about-page__container" style={{ maxWidth: 760, margin: '0 auto', padding: '0 40px' }}>
           <Reveal>
             <h2 style={{ fontSize: 'clamp(28px, 3.6vw, 44px)', fontWeight: 600, lineHeight: 1.2, letterSpacing: '-0.02em', color: COLORS.structure }}>
               We believe every good idea deserves a real shot at becoming a product.

@@ -84,10 +84,10 @@ export function WhyWeExist() {
           marginTop: 88,
           alignItems: 'start',
         }}
-        className="lg:grid-cols-[1fr_auto_1fr] grid-cols-1"
+        className="home-why-grid lg:grid-cols-[1fr_auto_1fr] grid-cols-1"
       >
         {/* Traditional — fades */}
-        <div>
+        <div className="home-why-column">
           <div style={{ fontFamily: MONO, fontSize: 11, letterSpacing: '0.2em', color: COLORS.ink40, textTransform: 'uppercase', marginBottom: 24 }}>
             The Usual Path
           </div>
@@ -99,12 +99,12 @@ export function WhyWeExist() {
 
         {/* Divider */}
         <div
-          className="hidden lg:flex"
+          className="home-why-divider hidden lg:flex"
           style={{ alignSelf: 'stretch', width: 1, backgroundColor: COLORS.line, justifySelf: 'center' }}
         />
 
         {/* OctaGlobe — signal */}
-        <div>
+        <div className="home-why-column">
           <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 24 }}>
             <span style={{ width: 6, height: 6, borderRadius: '50%', backgroundColor: COLORS.signal }} />
             <span style={{ fontFamily: MONO, fontSize: 11, letterSpacing: '0.2em', color: COLORS.structure, textTransform: 'uppercase' }}>

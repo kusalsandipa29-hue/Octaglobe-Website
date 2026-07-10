@@ -144,13 +144,15 @@ export function OperatingModel() {
         </p>
       </Reveal>
 
-      <Reveal delay={0.15} style={{ marginTop: 64 }}>
+      <Reveal className="home-operating-interactive" delay={0.15} style={{ marginTop: 64 }}>
         {/* Stage rail */}
-        <div style={{ display: 'flex', flexWrap: 'wrap', gap: 0, alignItems: 'center', marginBottom: 40 }}>
+        <div className="home-operating-rail" style={{ display: 'flex', flexWrap: 'wrap', gap: 0, alignItems: 'center', marginBottom: 40 }}>
           {STAGES.map((stage, i) => (
-            <div key={stage.key} style={{ display: 'flex', alignItems: 'center' }}>
+            <div className="home-operating-stage" key={stage.key} style={{ display: 'flex', alignItems: 'center' }}>
               <button
+                className="home-operating-stage-button"
                 onClick={() => setSelected(i)}
+                aria-pressed={selected === i}
                 style={{
                   display: 'flex',
                   flexDirection: 'column',
@@ -210,7 +212,7 @@ export function OperatingModel() {
               exit={{ opacity: 0, y: -8 }}
               transition={{ duration: 0.3 }}
             >
-              <div style={{ display: 'flex', alignItems: 'baseline', gap: 16, marginBottom: 32 }}>
+              <div className="home-operating-detail-heading" style={{ display: 'flex', alignItems: 'baseline', gap: 16, marginBottom: 32 }}>
                 <span style={{ fontFamily: MONO, fontSize: 13, color: COLORS.signal }}>
                   {String(selected + 1).padStart(2, '0')}/{total}
                 </span>
@@ -221,10 +223,10 @@ export function OperatingModel() {
 
               <div
                 style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 1, backgroundColor: COLORS.line, border: `1px solid ${COLORS.line}`, borderRadius: 10, overflow: 'hidden' }}
-                className="lg:grid-cols-3 sm:grid-cols-2 grid-cols-1"
+                className="home-operating-detail-grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1"
               >
                 {DETAIL_ROWS.map((row) => (
-                  <div key={row.key} style={{ backgroundColor: COLORS.clarity, padding: '20px 22px' }}>
+                  <div className="home-operating-detail-cell" key={row.key} style={{ backgroundColor: COLORS.clarity, padding: '20px 22px' }}>
                     <div style={{ fontFamily: MONO, fontSize: 10, letterSpacing: '0.16em', textTransform: 'uppercase', color: COLORS.ink40, marginBottom: 10 }}>
                       {row.label}
                     </div>
@@ -235,7 +237,7 @@ export function OperatingModel() {
                 ))}
               </div>
 
-              <div style={{ display: 'flex', gap: 12, marginTop: 24, alignItems: 'flex-start' }}>
+              <div className="home-operating-practice" style={{ display: 'flex', gap: 12, marginTop: 24, alignItems: 'flex-start' }}>
                 <span style={{ fontFamily: MONO, fontSize: 11, color: COLORS.signal, marginTop: 2, whiteSpace: 'nowrap' }}>
                   IN PRACTICE
                 </span>

@@ -38,13 +38,13 @@ export function SiteFooter() {
   };
 
   return (
-    <footer style={{ backgroundColor: COLORS.structure, color: COLORS.clarity }}>
-      <div style={{ maxWidth: MAX_W, margin: '0 auto', padding: '96px 40px 48px' }}>
+    <footer className="site-footer" style={{ backgroundColor: COLORS.structure, color: COLORS.clarity }}>
+      <div className="site-footer__inner" style={{ maxWidth: MAX_W, margin: '0 auto', padding: '96px 40px 48px' }}>
         <div
           style={{ display: 'grid', gridTemplateColumns: '1.4fr repeat(3, 1fr)', gap: 48 }}
-          className="lg:grid-cols-[1.4fr_repeat(3,1fr)] grid-cols-2"
+          className="site-footer__grid lg:grid-cols-[1.4fr_repeat(3,1fr)] grid-cols-2"
         >
-          <div>
+          <div className="site-footer__brand">
             <div style={{ display: 'flex', alignItems: 'center', gap: 14, marginBottom: 20 }}>
               <img src={logoMark} alt="OctaGlobe" style={{ width: 36, height: 36, borderRadius: 8 }} />
               <span style={{ fontSize: 18, fontWeight: 600, color: COLORS.clarity }}>OctaGlobe</span>
@@ -56,7 +56,7 @@ export function SiteFooter() {
           </div>
 
           {COLUMNS.map((col) => (
-            <div key={col.title}>
+            <div className="site-footer__column" key={col.title}>
               <div style={{ fontFamily: MONO, fontSize: 11, letterSpacing: '0.16em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.4)', marginBottom: 20 }}>
                 {col.title}
               </div>
@@ -72,6 +72,7 @@ export function SiteFooter() {
         </div>
 
         <div
+          className="site-footer__bottom"
           style={{
             display: 'flex',
             alignItems: 'center',
@@ -108,13 +109,13 @@ function FooterLink({ label, to, onClick }: { label: string; to?: string; onClic
   };
   if (to) {
     return (
-      <Link to={to} style={style} onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)}>
+      <Link className="site-footer__link" to={to} style={style} onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)}>
         {label}
       </Link>
     );
   }
   return (
-    <button style={style} onClick={onClick} onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)}>
+    <button className="site-footer__link" style={style} onClick={onClick} onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)}>
       {label}
     </button>
   );

@@ -25,10 +25,10 @@ export function Opportunity() {
 
       <div
         style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 64, marginTop: 80, alignItems: 'center' }}
-        className="lg:grid-cols-2 grid-cols-1"
+        className="home-opportunity-grid lg:grid-cols-2 grid-cols-1"
       >
         {/* Markets — change */}
-        <div>
+        <div className="home-opportunity-column">
           <div style={{ fontFamily: MONO, fontSize: 11, letterSpacing: '0.2em', color: COLORS.ink40, textTransform: 'uppercase', marginBottom: 24 }}>
             The market changes
           </div>
@@ -59,7 +59,7 @@ export function Opportunity() {
         </div>
 
         {/* Capability — repeats */}
-        <div>
+        <div className="home-opportunity-column">
           <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 24 }}>
             <span style={{ width: 6, height: 6, borderRadius: '50%', backgroundColor: COLORS.signal }} />
             <span style={{ fontFamily: MONO, fontSize: 11, letterSpacing: '0.2em', color: COLORS.structure, textTransform: 'uppercase' }}>

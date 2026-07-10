@@ -3,7 +3,7 @@ import { Chapter, ChapterLabel, Reveal, COLORS, MONO } from '../primitives';
 import logoMark from '../../../imports/Lockup_1.png';
 
 const CHANNELS = [
-  { label: 'Email', value: 'info@octaglobe.com', href: 'mailto:info@octaglobe.com' },
+  { label: 'Email', value: 'info@octaglobe.co', href: 'mailto:info@octaglobe.co' },
   { label: 'LinkedIn', value: 'linkedin.com/company/octaglobe', href: 'https://www.linkedin.com/company/octaglobe/', target: '_blank' },
   { label: 'Instagram', value: 'instagram.com/octaglobe', href: 'https://www.instagram.com/octaglobe', target: '_blank' },
 ];
@@ -31,7 +31,7 @@ export function Connect() {
       <Reveal delay={0.1} style={{ marginTop: 64 }}>
         <div
           style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 2 }}
-          className="lg:grid-cols-4 sm:grid-cols-2 grid-cols-1"
+          className="home-connect-grid lg:grid-cols-4 sm:grid-cols-2 grid-cols-1"
         >
           {CHANNELS.map((c) => (
             <ChannelLink key={c.label} {...c} />
@@ -48,6 +48,7 @@ function ChannelLink({ label, value, href, target }: { label: string; value: str
   const [hover, setHover] = useState(false);
   return (
     <a
+      className="home-channel-link"
       href={href}
       target={target}
       onMouseEnter={() => setHover(true)}
@@ -76,6 +77,7 @@ function ChannelLink({ label, value, href, target }: { label: string; value: str
         </span>
       </div>
       <div
+        className="home-channel-value"
         style={{
           fontSize: 16,
           fontWeight: 500,
@@ -91,8 +93,9 @@ function ChannelLink({ label, value, href, target }: { label: string; value: str
 
 function FooterBar() {
   return (
-    <div style={{ marginTop: 120, paddingBottom: 48 }}>
+    <div className="home-connect-footer" style={{ marginTop: 120, paddingBottom: 48 }}>
       <div
+        className="home-connect-footer-row"
         style={{
           display: 'flex',
           alignItems: 'center',
@@ -103,13 +106,13 @@ function FooterBar() {
           gap: 20,
         }}
       >
-        <div style={{ display: 'flex', alignItems: 'center', gap: 14 }}>
+        <div className="home-connect-footer-brand" style={{ display: 'flex', alignItems: 'center', gap: 14 }}>
           <img src={logoMark} alt="OctaGlobe" style={{ width: 32, height: 32, borderRadius: 8 }} />
           <span style={{ fontFamily: MONO, fontSize: 12, color: 'rgba(255,255,255,0.4)', letterSpacing: '0.04em' }}>
             Independent product research & development
           </span>
         </div>
-        <span style={{ fontFamily: MONO, fontSize: 12, color: 'rgba(255,255,255,0.3)' }}>
+        <span className="home-connect-footer-copy" style={{ fontFamily: MONO, fontSize: 12, color: 'rgba(255,255,255,0.3)' }}>
           © 2026 OctaGlobe
         </span>
       </div>

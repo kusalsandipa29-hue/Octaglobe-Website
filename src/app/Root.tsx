@@ -1,8 +1,10 @@
 import { useEffect } from 'react';
 import { Outlet, useLocation } from 'react-router';
+import { MobileNav } from './components/MobileNav';
 import { Nav } from './components/Nav';
 import { SideSections } from './components/SideSections';
 import { COLORS } from './components/primitives';
+import '../styles/shell-responsive.css';
 
 export function Root() {
   const { pathname, hash } = useLocation();
@@ -16,6 +18,7 @@ export function Root() {
 
   return (
     <div
+      className={`site-shell ${pathname === '/' ? 'site-shell--home' : 'site-shell--subpage'}`}
       style={{
         width: '100%',
         backgroundColor: COLORS.clarity,
@@ -23,7 +26,10 @@ export function Root() {
         paddingTop: padTop,
       }}
     >
-      <Nav />
+      <div className="site-shell__desktop-nav">
+        <Nav />
+      </div>
+      <MobileNav />
       <SideSections />
       <Outlet />
     </div>

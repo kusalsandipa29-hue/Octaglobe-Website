@@ -3,7 +3,7 @@ import { Chapter, ChapterLabel, Reveal, COLORS, MONO } from '../primitives';
 import logoMark from '../../../imports/Lockup_1.png';
 
 const CHANNELS = [
-  { label: 'Email', value: 'info@octaglobe.com', href: 'mailto:info@octaglobe.com' },
+  { label: 'Email', value: 'info@octaglobe.co', href: 'mailto:info@octaglobe.co' },
   { label: 'LinkedIn', value: 'linkedin.com/company/octaglobe', href: 'https://www.linkedin.com/company/octaglobe/', target: '_blank' },
   { label: 'Instagram', value: 'instagram.com/octaglobe', href: 'https://www.instagram.com/octaglobe', target: '_blank' },
 ];

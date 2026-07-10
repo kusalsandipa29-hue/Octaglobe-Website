@@ -6,6 +6,7 @@ import { ImageWithFallback } from '../components/figma/ImageWithFallback';
 import galleryImg1 from '../../imports/IMG-20260702-WA0033.jpg.jpeg';
 import galleryImg2 from '../../imports/IMG_5372.JPG.jpeg';
 import galleryImg3 from '../../imports/IMG_5373.JPG.jpeg';
+import galleryImg4 from '../../imports/WhatsApp Image 2026-07-10 at 9.13.56 PM.jpeg';
 import nibm2 from '../../imports/nibm event/FB_IMG_1781829391352.jpg';
 import founderImage from '../../imports/Lockup_1-1.png';
 import '../../styles/pages-responsive.css';
@@ -14,6 +15,7 @@ const GALLERY = [
   galleryImg1,
   galleryImg2,
   galleryImg3,
+  galleryImg4,
   nibm2,
 ];
 

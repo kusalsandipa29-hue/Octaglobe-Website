@@ -1,5 +1,6 @@
 import { motion } from 'motion/react';
 import { Chapter, ChapterLabel, ChapterTitle, Reveal, COLORS, MONO } from '../primitives';
+import { CapabilityIllustration } from '../illustrations/BrandIllustrations';
 
 const MARKETS = [
   'Productivity', 'Finance', 'Healthcare', 'Education', 'AI',
@@ -11,20 +12,51 @@ export function Opportunity() {
   return (
     <Chapter id="opportunity">
       <ChapterLabel index="03" title="Opportunity Over Niche" />
-      <Reveal>
-        <ChapterTitle>
-          We aren't defined by an industry. We're defined by a repeatable capability.
-        </ChapterTitle>
-      </Reveal>
-      <Reveal delay={0.1}>
-        <p style={{ fontSize: 18, lineHeight: 1.75, color: COLORS.ink55, maxWidth: 620, marginTop: 28 }}>
-          We research opportunities wherever they exist and turn the strongest ideas into focused
-          software businesses. The market changes — the way we work does not.
-        </p>
-      </Reveal>
-
+      
+      {/* Top section: Heading + Description + Illustration */}
       <div
-        style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 64, marginTop: 80, alignItems: 'center' }}
+        style={{
+          display: 'grid',
+          gridTemplateColumns: '1fr 1fr',
+          gap: 48,
+          marginBottom: 80,
+          alignItems: 'start',
+        }}
+        className="lg:grid-cols-[1fr_1fr] grid-cols-1 lg:gap-12 xl:gap-16"
+      >
+        {/* Left: Heading and description */}
+        <div>
+          <Reveal>
+            <ChapterTitle>
+              We aren't defined by an industry. We're defined by a repeatable capability.
+            </ChapterTitle>
+          </Reveal>
+          <Reveal delay={0.1}>
+            <p style={{ fontSize: 18, lineHeight: 1.75, color: COLORS.ink55, maxWidth: 620, marginTop: 28 }} className="lg:text-lg lg:leading-relaxed">
+              We research opportunities wherever they exist and turn the strongest ideas into focused
+              software businesses. The market changes — the way we work does not.
+            </p>
+          </Reveal>
+        </div>
+
+        {/* Right: Illustration */}
+        <div
+          className="hidden lg:flex"
+          style={{
+            alignItems: 'flex-start',
+            justifyContent: 'center',
+            paddingTop: 8,
+          }}
+        >
+          <div style={{ width: 'min(400px, 100%)' }} className="lg:min-w-96">
+            <CapabilityIllustration />
+          </div>
+        </div>
+      </div>
+
+      {/* Bottom section: Market vs Capability comparison */}
+      <div
+        style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 64, alignItems: 'center' }}
         className="home-opportunity-grid lg:grid-cols-2 grid-cols-1"
       >
         {/* Markets — change */}

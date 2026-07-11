@@ -225,7 +225,7 @@ export function ChapterTitle({ children, invert }: { children: ReactNode; invert
   return (
     <h2
       style={{
-        fontSize: 'clamp(30px, 4.2vw, 52px)',
+        fontSize: 'clamp(30px, 4.2vw, 58px)',
         fontWeight: 600,
         lineHeight: 1.12,
         letterSpacing: '-0.03em',

@@ -1,5 +1,6 @@
 import { motion } from 'motion/react';
 import { Chapter, ChapterLabel, ChapterTitle, Reveal, COLORS, MONO } from '../primitives';
+import { EvidenceIllustration } from '../illustrations/BrandIllustrations';
 
 const TRADITIONAL = ['Assumption', 'Build', 'Launch', 'Hope', 'Rebuild'];
 const OCTAGLOBE = ['Opportunity', 'Research', 'Validation', 'Product', 'Measure', 'Improve', 'Scale'];
@@ -66,22 +67,52 @@ export function WhyWeExist() {
   return (
     <Chapter id="why-we-exist" background={COLORS.surface}>
       <ChapterLabel index="02" title="Why We Exist" />
-      <Reveal>
-        <ChapterTitle>Most products start with an assumption. Ours start with evidence.</ChapterTitle>
-      </Reveal>
-      <Reveal delay={0.1}>
-        <p style={{ fontSize: 18, lineHeight: 1.75, color: COLORS.ink55, maxWidth: 620, marginTop: 28 }}>
-          The usual path builds first and hopes second. We research before assuming and validate
-          before investing — so the products we build are ones people genuinely use.
-        </p>
-      </Reveal>
+      
+      {/* Top section: Heading + Description + Illustration */}
+      <div
+        style={{
+          display: 'grid',
+          gridTemplateColumns: '1fr 1fr',
+          gap: 48,
+          marginBottom: 80,
+          alignItems: 'start',
+        }}
+        className="lg:grid-cols-[1fr_1fr] grid-cols-1 lg:gap-12 xl:gap-16"
+      >
+        {/* Left: Heading and description */}
+        <div>
+          <Reveal>
+            <ChapterTitle>Most products start with an assumption. Ours start with evidence.</ChapterTitle>
+          </Reveal>
+          <Reveal delay={0.1}>
+            <p style={{ fontSize: 18, lineHeight: 1.75, color: COLORS.ink55, maxWidth: 620, marginTop: 28 }} className="lg:text-lg lg:leading-relaxed">
+              The usual path builds first and hopes second. We research before assuming and validate
+              before investing — so the products we build are ones people genuinely use.
+            </p>
+          </Reveal>
+        </div>
 
+        {/* Right: Illustration */}
+        <div
+          className="hidden lg:flex"
+          style={{
+            alignItems: 'flex-start',
+            justifyContent: 'center',
+            paddingTop: 8,
+          }}
+        >
+          <div style={{ width: 'min(380px, 100%)' }} className="lg:min-w-96">
+            <EvidenceIllustration />
+          </div>
+        </div>
+      </div>
+
+      {/* Bottom section: Comparison flows */}
       <div
         style={{
           display: 'grid',
           gridTemplateColumns: '1fr auto 1fr',
           gap: 48,
-          marginTop: 88,
           alignItems: 'start',
         }}
         className="home-why-grid lg:grid-cols-[1fr_auto_1fr] grid-cols-1"

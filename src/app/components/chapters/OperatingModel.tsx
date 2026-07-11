@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Chapter, ChapterLabel, ChapterTitle, Reveal, Frame, COLORS, MONO } from '../primitives';
+import { ProcessIllustration } from '../illustrations/BrandIllustrations';
 
 interface Stage {
   key: string;
@@ -134,17 +135,48 @@ export function OperatingModel() {
   return (
     <Chapter id="operating-model" background={COLORS.surface}>
       <ChapterLabel index="04" title="How Products Become Reality" />
-      <Reveal>
-        <ChapterTitle>One repeatable process, from observation to scale.</ChapterTitle>
-      </Reveal>
-      <Reveal delay={0.1}>
-        <p style={{ fontSize: 18, lineHeight: 1.75, color: COLORS.ink55, maxWidth: 620, marginTop: 28 }}>
-          Every product moves through the same ten steps. Select any step to inspect its inputs,
-          outputs, decisions, and the risks it manages.
-        </p>
-      </Reveal>
+      
+      {/* Top section: Heading + Description + Illustration */}
+      <div
+        style={{
+          display: 'grid',
+          gridTemplateColumns: '1fr 1fr',
+          gap: 48,
+          marginBottom: 80,
+          alignItems: 'start',
+        }}
+        className="lg:grid-cols-[1fr_1fr] grid-cols-1 lg:gap-12 xl:gap-16"
+      >
+        {/* Left: Heading and description */}
+        <div>
+          <Reveal>
+            <ChapterTitle>One repeatable process, from observation to scale.</ChapterTitle>
+          </Reveal>
+          <Reveal delay={0.1}>
+            <p style={{ fontSize: 18, lineHeight: 1.75, color: COLORS.ink55, maxWidth: 620, marginTop: 28 }} className="lg:text-lg lg:leading-relaxed">
+              Every product moves through the same ten steps. Select any step to inspect its inputs,
+              outputs, decisions, and the risks it manages.
+            </p>
+          </Reveal>
+        </div>
 
-      <Reveal className="home-operating-interactive" delay={0.15} style={{ marginTop: 64 }}>
+        {/* Right: Illustration */}
+        <div
+          className="hidden lg:flex"
+          style={{
+            alignItems: 'flex-start',
+            justifyContent: 'center',
+            paddingTop: 8,
+          }}
+        >
+          <div style={{ width: 'min(400px, 100%)' }} className="lg:min-w-96">
+            <ProcessIllustration />
+          </div>
+        </div>
+      </div>
+
+      {/* Bottom section: Interactive process */}
+      <Reveal className="home-operating-interactive" delay={0.15} style={{ marginTop: 0 }}>
         {/* Stage rail */}
         <div className="home-operating-rail" style={{ display: 'flex', flexWrap: 'wrap', gap: 0, alignItems: 'center', marginBottom: 40 }}>
           {STAGES.map((stage, i) => (

@@ -17,22 +17,21 @@ export function Opportunity() {
       <div
         style={{
           display: 'grid',
-          gridTemplateColumns: '1fr 1fr',
           gap: 48,
           marginBottom: 80,
           alignItems: 'start',
         }}
-        className="lg:grid-cols-[1fr_1fr] grid-cols-1 lg:gap-12 xl:gap-16"
+        className="grid-cols-1 lg:grid-cols-[1fr_1fr] lg:gap-12 xl:gap-16"
       >
         {/* Left: Heading and description */}
-        <div>
+        <div style={{ minWidth: 0, boxSizing: 'border-box' }}>
           <Reveal>
             <ChapterTitle>
               We aren't defined by an industry. We're defined by a repeatable capability.
             </ChapterTitle>
           </Reveal>
           <Reveal delay={0.1}>
-            <p style={{ fontSize: 18, lineHeight: 1.75, color: COLORS.ink55, maxWidth: 620, marginTop: 28 }} className="lg:text-lg lg:leading-relaxed">
+            <p style={{ fontSize: 18, lineHeight: 1.75, color: COLORS.ink55, maxWidth: '100%', marginTop: 28, wordBreak: 'normal', overflowWrap: 'normal', hyphens: 'none', whiteSpace: 'normal' }} className="lg:max-w-lg lg:text-lg lg:leading-relaxed">
               We research opportunities wherever they exist and turn the strongest ideas into focused
               software businesses. The market changes — the way we work does not.
             </p>
@@ -56,8 +55,8 @@ export function Opportunity() {
 
       {/* Bottom section: Market vs Capability comparison */}
       <div
-        style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 64, alignItems: 'center' }}
-        className="home-opportunity-grid lg:grid-cols-2 grid-cols-1"
+        style={{ display: 'grid', gap: 64, alignItems: 'center' }}
+        className="home-opportunity-grid grid-cols-1 lg:grid-cols-2"
       >
         {/* Markets — change */}
         <div className="home-opportunity-column">

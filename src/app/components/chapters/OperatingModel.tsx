@@ -140,20 +140,19 @@ export function OperatingModel() {
       <div
         style={{
           display: 'grid',
-          gridTemplateColumns: '1fr 1fr',
           gap: 48,
           marginBottom: 80,
           alignItems: 'start',
         }}
-        className="lg:grid-cols-[1fr_1fr] grid-cols-1 lg:gap-12 xl:gap-16"
+        className="grid-cols-1 lg:grid-cols-[1fr_1fr] lg:gap-12 xl:gap-16"
       >
         {/* Left: Heading and description */}
-        <div>
+        <div style={{ minWidth: 0, boxSizing: 'border-box' }}>
           <Reveal>
             <ChapterTitle>One repeatable process, from observation to scale.</ChapterTitle>
           </Reveal>
           <Reveal delay={0.1}>
-            <p style={{ fontSize: 18, lineHeight: 1.75, color: COLORS.ink55, maxWidth: 620, marginTop: 28 }} className="lg:text-lg lg:leading-relaxed">
+            <p style={{ fontSize: 18, lineHeight: 1.75, color: COLORS.ink55, maxWidth: '100%', marginTop: 28, wordBreak: 'normal', overflowWrap: 'normal', hyphens: 'none', whiteSpace: 'normal' }} className="lg:max-w-lg lg:text-lg lg:leading-relaxed">
               Every product moves through the same ten steps. Select any step to inspect its inputs,
               outputs, decisions, and the risks it manages.
             </p>
@@ -254,8 +253,8 @@ export function OperatingModel() {
               </div>
 
               <div
-                style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 1, backgroundColor: COLORS.line, border: `1px solid ${COLORS.line}`, borderRadius: 10, overflow: 'hidden' }}
-                className="home-operating-detail-grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1"
+                style={{ display: 'grid', gap: 1, backgroundColor: COLORS.line, border: `1px solid ${COLORS.line}`, borderRadius: 10, overflow: 'hidden' }}
+                className="home-operating-detail-grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3"
               >
                 {DETAIL_ROWS.map((row) => (
                   <div className="home-operating-detail-cell" key={row.key} style={{ backgroundColor: COLORS.clarity, padding: '20px 22px' }}>

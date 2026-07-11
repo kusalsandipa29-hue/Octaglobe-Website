@@ -72,20 +72,19 @@ export function WhyWeExist() {
       <div
         style={{
           display: 'grid',
-          gridTemplateColumns: '1fr 1fr',
           gap: 48,
           marginBottom: 80,
           alignItems: 'start',
         }}
-        className="lg:grid-cols-[1fr_1fr] grid-cols-1 lg:gap-12 xl:gap-16"
+        className="grid-cols-1 lg:grid-cols-[1fr_1fr] lg:gap-12 xl:gap-16"
       >
         {/* Left: Heading and description */}
-        <div>
+        <div style={{ minWidth: 0, boxSizing: 'border-box' }}>
           <Reveal>
             <ChapterTitle>Most products start with an assumption. Ours start with evidence.</ChapterTitle>
           </Reveal>
           <Reveal delay={0.1}>
-            <p style={{ fontSize: 18, lineHeight: 1.75, color: COLORS.ink55, maxWidth: 620, marginTop: 28 }} className="lg:text-lg lg:leading-relaxed">
+            <p style={{ fontSize: 18, lineHeight: 1.75, color: COLORS.ink55, maxWidth: '100%', marginTop: 28, wordBreak: 'normal', overflowWrap: 'normal', hyphens: 'none', whiteSpace: 'normal' }} className="lg:max-w-lg lg:text-lg lg:leading-relaxed">
               The usual path builds first and hopes second. We research before assuming and validate
               before investing — so the products we build are ones people genuinely use.
             </p>
@@ -111,11 +110,10 @@ export function WhyWeExist() {
       <div
         style={{
           display: 'grid',
-          gridTemplateColumns: '1fr auto 1fr',
           gap: 48,
           alignItems: 'start',
         }}
-        className="home-why-grid lg:grid-cols-[1fr_auto_1fr] grid-cols-1"
+        className="home-why-grid grid-cols-1 lg:grid-cols-[1fr_auto_1fr]"
       >
         {/* Traditional — fades */}
         <div className="home-why-column">

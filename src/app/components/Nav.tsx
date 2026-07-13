@@ -15,7 +15,7 @@ const SECTION_ITEMS: { label: string; target: string }[] = [
 // Route links
 const PAGE_ITEMS: { label: string; to?: string; onClick?: () => void }[] = [
   { label: 'Products' },
-  { label: 'Case Studies' },
+  { label: 'Case Studies', to: '/case-studies' },
   { label: 'Blog', to: '/blog' },
   { label: 'About', to: '/about' },
 ];
@@ -130,6 +130,9 @@ function NavButton({
   to?: string;
   onDark?: boolean;
 }) {
+  const [submenuOpen, setSubmenuOpen] = useState(false);
+  const hasComingSoonMenu = label === 'Products';
+  const highlighted = active || submenuOpen;
   const activeColor = onDark ? COLORS.clarity : COLORS.structure;
   const idleColor = onDark ? 'rgba(255,255,255,0.6)' : COLORS.ink40;
   const hoverColor = onDark ? COLORS.clarity : COLORS.ink70;
@@ -145,8 +148,8 @@ function NavButton({
           height: 5,
           borderRadius: '50%',
           backgroundColor: COLORS.signal,
-          opacity: active ? 1 : 0,
-          transform: active ? 'scale(1)' : 'scale(0.4)',
+          opacity: highlighted ? 1 : 0,
+          transform: highlighted ? 'scale(1)' : 'scale(0.4)',
           transition: 'all 0.25s ease',
         }}
       />
@@ -163,17 +166,17 @@ function NavButton({
     fontSize: 12,
     letterSpacing: '0.08em',
     textTransform: 'uppercase',
-    color: active ? activeColor : idleColor,
+    color: highlighted ? activeColor : idleColor,
     transition: 'color 0.2s ease',
     textDecoration: 'none',
     display: 'inline-block',
   };
 
   const hoverIn = (e: React.MouseEvent<HTMLElement>) => {
-    if (!active) (e.currentTarget as HTMLElement).style.color = hoverColor;
+    if (!highlighted) (e.currentTarget as HTMLElement).style.color = hoverColor;
   };
   const hoverOut = (e: React.MouseEvent<HTMLElement>) => {
-    if (!active) (e.currentTarget as HTMLElement).style.color = idleColor;
+    if (!highlighted) (e.currentTarget as HTMLElement).style.color = idleColor;
   };
 
   if (to) {
@@ -183,6 +186,82 @@ function NavButton({
       </Link>
     );
   }
+
+  if (hasComingSoonMenu) {
+    return (
+      <div
+        style={{ position: 'relative' }}
+        onMouseEnter={() => setSubmenuOpen(true)}
+        onMouseLeave={() => setSubmenuOpen(false)}
+        onFocus={() => setSubmenuOpen(true)}
+        onBlur={(event) => {
+          if (!event.currentTarget.contains(event.relatedTarget as Node | null)) setSubmenuOpen(false);
+        }}
+        onKeyDown={(event) => {
+          if (event.key === 'Escape') {
+            setSubmenuOpen(false);
+            (event.currentTarget.querySelector('button') as HTMLButtonElement | null)?.focus();
+          }
+        }}
+      >
+        <button
+          type="button"
+          aria-haspopup="menu"
+          aria-expanded={submenuOpen}
+          aria-controls="products-coming-soon-menu"
+          style={style}
+          onMouseEnter={hoverIn}
+          onMouseLeave={hoverOut}
+        >
+          {inner}
+        </button>
+        <div
+          id="products-coming-soon-menu"
+          role="menu"
+          aria-label="Products"
+          style={{
+            position: 'absolute',
+            top: 'calc(100% + 8px)',
+            left: '50%',
+            minWidth: 164,
+            padding: 8,
+            border: `1px solid ${COLORS.line}`,
+            borderRadius: 12,
+            backgroundColor: COLORS.clarity,
+            boxShadow: '0 16px 40px rgba(20,18,40,0.12)',
+            opacity: submenuOpen ? 1 : 0,
+            pointerEvents: submenuOpen ? 'auto' : 'none',
+            transform: submenuOpen ? 'translate(-50%, 0)' : 'translate(-50%, -6px)',
+            transition: 'opacity 0.18s ease, transform 0.18s ease',
+          }}
+        >
+          <div
+            role="menuitem"
+            aria-disabled="true"
+            style={{
+              display: 'flex',
+              minHeight: 42,
+              padding: '0 12px',
+              alignItems: 'center',
+              gap: 10,
+              borderRadius: 8,
+              backgroundColor: COLORS.surface,
+              color: COLORS.ink55,
+              fontFamily: MONO,
+              fontSize: 11,
+              letterSpacing: '0.08em',
+              whiteSpace: 'nowrap',
+              textTransform: 'uppercase',
+            }}
+          >
+            <span style={{ width: 6, height: 6, borderRadius: '50%', backgroundColor: COLORS.signal }} />
+            Coming Soon
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <button onClick={onClick} style={style} onMouseEnter={hoverIn} onMouseLeave={hoverOut}>
       {inner}

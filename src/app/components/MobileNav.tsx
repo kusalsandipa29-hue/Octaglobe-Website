@@ -5,6 +5,7 @@ import wordmarkInvert from '../../imports/Wordmark__Invert_.png';
 
 const PAGE_LINKS = [
   { label: 'Home', to: '/' },
+  { label: 'Case Studies', to: '/case-studies' },
   { label: 'Blog', to: '/blog' },
   { label: 'About', to: '/about' },
 ];

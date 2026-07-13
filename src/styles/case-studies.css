@@ -52,7 +52,7 @@
 
 .case-index-hero__intro {
   max-width: 640px;
-  margin: 36px 0 0 auto;
+  margin: 36px 0 0;
   color: rgba(20, 18, 40, 0.58);
   font-size: clamp(18px, 2vw, 22px);
   line-height: 1.6;

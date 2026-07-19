@@ -1,6 +1,7 @@
 import { Link } from 'react-router';
 import { ArrowLeft, ArrowUpRight } from 'lucide-react';
 import { MAX_W, Reveal } from '../components/primitives';
+import { CaseStudyFigure } from '../components/CaseStudyFigure';
 import { SiteFooter } from '../components/SiteFooter';
 import dashboardImage from '../../imports/cases/digiq/Product design 2.jpeg';
 import citizenImage from '../../imports/cases/digiq/User UI.png';
@@ -19,27 +20,6 @@ const SECTIONS = [
   ['constraints', 'Service constraints'],
   ['outcome', 'Outcome'],
 ];
-
-function CaseFigure({
-  src,
-  alt,
-  caption,
-  className = '',
-}: {
-  src: string;
-  alt: string;
-  caption: string;
-  className?: string;
-}) {
-  return (
-    <figure className={`digiq-figure ${className}`}>
-      <div className="digiq-figure__media">
-        <img src={src} alt={alt} loading="lazy" />
-      </div>
-      <figcaption>{caption}</figcaption>
-    </figure>
-  );
-}
 
 export function DigiQCaseStudy() {
   return (
@@ -142,7 +122,7 @@ export function DigiQCaseStudy() {
                 delay, leave the queue, review status changes, and receive a notification as their turn
                 approaches.
               </p>
-              <CaseFigure
+              <CaseStudyFigure
                 src={citizenImage}
                 alt="DigiQ citizen interface displaying an active ticket, estimated waiting time and queue updates"
                 caption="The citizen view keeps the most important information visible: ticket number, queue position, expected service time and recent changes."
@@ -173,7 +153,7 @@ export function DigiQCaseStudy() {
                 several screens. Upcoming tickets remain visible, but they do not compete with the task in
                 progress.
               </p>
-              <CaseFigure
+              <CaseStudyFigure
                 src={staffImage}
                 alt="DigiQ counter staff interface showing the current ticket, upcoming queue and counter actions"
                 caption="The counter workspace focuses on a small set of repeatable actions while keeping the next tickets within view."
@@ -208,17 +188,17 @@ export function DigiQCaseStudy() {
               </p>
 
               <div className="digiq-product-grid">
-                <CaseFigure
+                <CaseStudyFigure
                   src={productCad}
                   alt="CAD model of the DigiQ Pebble enclosure"
                   caption="The enclosure was developed around screen visibility, simple controls and a compact form."
                 />
-                <CaseFigure
+                <CaseStudyFigure
                   src={productRender}
                   alt="Refined render of the DigiQ Pebble displaying a queue ticket"
                   caption="The refined concept shows only the information needed while a citizen is waiting."
                 />
-                <CaseFigure
+                <CaseStudyFigure
                   src={productPrototype}
                   alt="Physical DigiQ Pebble prototype held in a hand"
                   caption="A physical prototype tested scale, handling and component placement."
@@ -233,7 +213,7 @@ export function DigiQCaseStudy() {
                 The component set was deliberately small. More controls would increase manufacturing and
                 support requirements without improving the main queue experience.
               </p>
-              <CaseFigure
+              <CaseStudyFigure
                 src={wireDiagram}
                 alt="DigiQ Pebble wiring diagram showing the ESP32, OLED display, vibration motor, button and battery"
                 caption="The prototype electronics connect the display, physical input and vibration alert through an ESP32-based controller."

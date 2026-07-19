@@ -1,5 +1,6 @@
 .case-studies-page,
-.digiq-page {
+.digiq-page,
+.tapfare-page {
   background: #fff;
   color: #141228;
 }
@@ -62,6 +63,11 @@
   padding: 0 0 120px;
 }
 
+.case-index-list {
+  display: grid;
+  gap: 52px;
+}
+
 .case-card {
   overflow: hidden;
   border: 1px solid rgba(20, 18, 40, 0.1);
@@ -99,6 +105,29 @@
 .case-card__media:hover > img {
   opacity: 0.97;
   transform: scale(1.025);
+}
+
+.case-card--tapfare .case-card__media {
+  background: #eef1ef;
+}
+
+.case-card--tapfare .case-card__media > img {
+  box-sizing: border-box;
+  padding: 0;
+  object-fit: cover;
+  opacity: 0.9;
+}
+
+.case-card--tapfare .case-card__media::after {
+  background: linear-gradient(0deg, rgba(20, 18, 40, 0.2), transparent 34%);
+}
+
+.case-card__device--diagram {
+  background: #fff;
+}
+
+.case-card__device--diagram img {
+  object-fit: contain;
 }
 
 .case-card__device {
@@ -245,6 +274,16 @@
   transform: translateX(4px);
 }
 
+.case-card__media:focus-visible,
+.case-round-link:focus-visible,
+.case-text-link:focus-visible,
+.digiq-back:focus-visible,
+.digiq-toc a:focus-visible,
+.digiq-next__link:focus-visible {
+  outline: 3px solid #03ef62;
+  outline-offset: 4px;
+}
+
 /* DigiQ article */
 .digiq-hero {
   overflow: hidden;
@@ -307,6 +346,59 @@
   color: rgba(255, 255, 255, 0.55);
   font-size: 16px;
   line-height: 1.7;
+}
+
+.digiq-hero__summary + .digiq-hero__summary {
+  margin-top: 14px;
+}
+
+/* TapFare Lanka article */
+.tapfare-hero__grid {
+  grid-template-columns: minmax(0, 1.05fr) minmax(360px, 0.95fr);
+  align-items: start;
+  padding-bottom: 58px;
+}
+
+.tapfare-hero h1 {
+  max-width: 720px;
+  font-size: clamp(62px, 9vw, 126px);
+  line-height: 0.86;
+}
+
+.tapfare-hero__lede-wrap {
+  padding-top: 1px;
+}
+
+.tapfare-journey {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  list-style: none;
+}
+
+.tapfare-journey li {
+  position: relative;
+  min-width: 0;
+  padding: 23px 18px 24px;
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.76);
+  font-size: 14px;
+}
+
+.tapfare-journey li:first-child {
+  padding-left: 0;
+  border-left: 0;
+}
+
+.tapfare-journey li span {
+  display: block;
+  margin-bottom: 8px;
+  color: #03ef62;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.1em;
 }
 
 .digiq-hero__image {
@@ -450,6 +542,15 @@
   line-height: 1.08;
 }
 
+.tapfare-article h3 {
+  margin: 44px 0 20px;
+  color: #141228;
+  font-size: 21px;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  line-height: 1.3;
+}
+
 .digiq-article p {
   max-width: 700px;
   margin: 0 0 22px;
@@ -523,6 +624,75 @@
   line-height: 1.65;
 }
 
+.tapfare-figure .digiq-figure__media {
+  padding: clamp(18px, 3vw, 36px);
+  background: #f6f7f6;
+}
+
+.tapfare-figure .digiq-figure__media img {
+  max-width: 100%;
+  margin-inline: auto;
+  object-fit: contain;
+}
+
+.tapfare-figure--portrait .digiq-figure__media img {
+  max-width: 700px;
+}
+
+.tapfare-figure--process .digiq-figure__media img {
+  max-width: 433px;
+}
+
+.tapfare-role-grid,
+.tapfare-steps {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1px;
+  margin: 42px 0 52px;
+  padding: 1px;
+  background: rgba(20, 18, 40, 0.1);
+}
+
+.tapfare-role-grid > div,
+.tapfare-steps li {
+  min-width: 0;
+  padding: 25px 26px;
+  background: #fff;
+}
+
+.tapfare-role-grid dt {
+  margin-bottom: 10px;
+  color: #02a944;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.tapfare-role-grid dd {
+  margin: 0;
+  color: rgba(20, 18, 40, 0.66);
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+.tapfare-steps {
+  padding: 1px;
+  list-style: none;
+}
+
+.tapfare-steps li {
+  color: rgba(20, 18, 40, 0.72);
+  font-size: 15px;
+}
+
+.tapfare-steps li span {
+  margin-right: 14px;
+  color: #02a944;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9px;
+}
+
 .digiq-figure--phone .digiq-figure__media {
   padding: 46px;
   background: #eff1f1;
@@ -594,6 +764,45 @@
   border-radius: 50%;
   background: #03ef62;
   content: '';
+}
+
+.tapfare-outcome h3 + ul {
+  margin-top: 22px;
+}
+
+.tapfare-next-stage > ul {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px 22px;
+  margin: 28px 0 38px;
+  padding: 0;
+  list-style: none;
+}
+
+.tapfare-next-stage > ul li {
+  position: relative;
+  padding-left: 20px;
+  color: rgba(20, 18, 40, 0.68);
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+.tapfare-next-stage > ul li::before {
+  position: absolute;
+  top: 0.62em;
+  left: 0;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #03ef62;
+  content: '';
+}
+
+@media (min-width: 1200px) {
+  .tapfare-figure--wide {
+    width: calc(100% + 120px);
+    margin-left: -60px;
+  }
 }
 
 .digiq-next {
@@ -688,6 +897,23 @@
   .digiq-hero__grid {
     grid-template-columns: 1fr;
     gap: 50px;
+  }
+
+  .tapfare-hero__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tapfare-journey {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .tapfare-journey li:nth-child(4) {
+    padding-left: 0;
+    border-left: 0;
+  }
+
+  .tapfare-journey li:nth-child(n + 4) {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
   }
 
   .digiq-hero__lede-wrap {
@@ -791,6 +1017,11 @@
     font-size: clamp(70px, 25vw, 112px);
   }
 
+  .tapfare-hero h1 {
+    font-size: clamp(58px, 19vw, 88px);
+    line-height: 0.92;
+  }
+
   .digiq-hero__lede {
     font-size: 26px;
   }
@@ -807,6 +1038,25 @@
 
   .digiq-hero__image-label {
     display: none;
+  }
+
+  .tapfare-journey {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .tapfare-journey li,
+  .tapfare-journey li:nth-child(4) {
+    padding: 19px 14px;
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .tapfare-journey li:nth-child(odd) {
+    padding-left: 0;
+    border-left: 0;
+  }
+
+  .tapfare-journey li:nth-child(n + 3) {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
   }
 
   .digiq-meta {
@@ -888,6 +1138,25 @@
     gap: 34px;
   }
 
+  .tapfare-role-grid,
+  .tapfare-steps,
+  .tapfare-next-stage > ul {
+    grid-template-columns: 1fr;
+  }
+
+  .tapfare-role-grid > div,
+  .tapfare-steps li {
+    padding: 22px 20px;
+  }
+
+  .tapfare-figure .digiq-figure__media {
+    padding: 14px;
+  }
+
+  .case-card--tapfare .case-card__device {
+    width: 92px;
+  }
+
   .digiq-product-grid .digiq-figure__media {
     aspect-ratio: 4 / 3;
   }
@@ -910,7 +1179,8 @@
   .case-card__media > img,
   .case-round-link,
   .case-text-link span,
-  .digiq-next__link {
+  .digiq-next__link,
+  .digiq-toc a {
     transition: none;
   }
 }
